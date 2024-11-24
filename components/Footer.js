@@ -18,14 +18,14 @@ const Footer = () => {
                     </a>
                     <div className="flex gap-4 px-4 pt-2">
                         <Link
-                            href="https://instagram.com/your-handle"
+                            href="https://www.instagram.com/datathon.uom/"
                             target="_blank"
                             className="text-gray-300 hover:text-yellow-300 transition-colors duration-200"
                         >
                             <Instagram size={24} />
                         </Link>
                         <Link
-                            href="https://facebook.com/your-page"
+                            href="https://facebook.com/profile.php?id=61567924213945"
                             target="_blank"
                             className="text-gray-300 hover:text-yellow-300 transition-colors duration-200"
                         >

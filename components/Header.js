@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, Clipboard, Facebook, Instagram } from 'lucide-react';
+import { Menu, Scroll, Facebook, Instagram } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -128,7 +128,7 @@ export const Header = () => {
                                 onClick={() => scrollToSection('registration')}
                                 className="p-2 rounded-md text-gray-300 hover:text-yellow-300 hover:bg-gray-800"
                             >
-                                <Clipboard className="h-6 w-6 text-yellow-300" />
+                                <Scroll className="h-6 w-6 text-yellow-300" />
                             </button>
                         </div>
                         <div className="md:hidden">
@@ -173,14 +173,14 @@ export const Header = () => {
                         {/* Social Media Icons */}
                         <div className="flex gap-4 px-4 pt-2">
                             <Link
-                                href="https://instagram.com/your-handle"
+                                href="https://www.instagram.com/datathon.uom/"
                                 target="_blank"
                                 className="text-gray-300 hover:text-yellow-300 transition-colors duration-200"
                             >
                                 <Instagram size={24} />
                             </Link>
                             <Link
-                                href="https://facebook.com/your-page"
+                                href="https://facebook.com/profile.php?id=61567924213945"
                                 target="_blank"
                                 className="text-gray-300 hover:text-yellow-300 transition-colors duration-200"
                             >
