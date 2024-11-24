@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export const Header = () => {
+    const router = useRouter();
     const [isOpen, setIsOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('');
     const [isScrolled, setIsScrolled] = useState(false);
@@ -44,6 +46,16 @@ export const Header = () => {
         return () => sections.forEach(section => observer.unobserve(section));
     }, []);
 
+    const handleLogoClick = () => {
+        if (router.pathname !== '/') {
+            // If we're not on the main page, navigate to it
+            router.push('/');
+        } else {
+            // If we're already on the main page, just scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
+
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -61,11 +73,12 @@ export const Header = () => {
             : 'bg-transparent'
             }`}>
             <div className="relative">
-
-
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="flex justify-between items-center h-16">
-                        <div className="flex-shrink-0">
+                        <div
+                            className="flex-shrink-0 cursor-pointer"
+                            onClick={handleLogoClick}
+                        >
                             <img
                                 src="/logo2.png"
                                 alt="Logo"
