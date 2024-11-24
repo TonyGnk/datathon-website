@@ -87,23 +87,11 @@ export const RegistrationForm = () => {
             category,
             members: teamMembers.map(({ id, ...member }) => member),
             autoTeam: teamMembers.length === 1 ? autoTeam : false,
-            createdAt: serverTimestamp(),
+            teamId: "8dzV5eDQfuxflFocJuns"
         };
 
         try {
-            // First, save to Firebase
-            if (!db) {
-                throw new Error('Firebase is not initialized');
-            }
-
-            const registrationsRef = collection(db, 'participants');
-            const docRef = await addDoc(registrationsRef, {
-                ...formData,
-                createdAt: serverTimestamp(),
-            });
-
-            // Then, send emails
-            const emailResponse = await fetch('/api/send-email', {
+            const response = await fetch('/api/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -111,11 +99,13 @@ export const RegistrationForm = () => {
                 body: JSON.stringify(formData),
             });
 
-            if (!emailResponse.ok) {
-                const errorData = await emailResponse.json();
-                throw new Error(errorData.details || 'Failed to send confirmation emails');
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.details || data.error || 'Σφάλμα κατά την αποστολή των emails');
             }
 
+            // Success case
             setStatus('success');
             e.target.reset();
             setTeamMembers([]);
@@ -126,11 +116,11 @@ export const RegistrationForm = () => {
             setAutoTeam(false);
 
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Error during submission:', error);
             setStatus('error');
             setSubmissionError(
-                'Παρουσιάστηκε σφάλμα κατά την υποβολή. Παρακαλώ προσπαθήστε ξανά. ' +
-                (error.message || '')
+                'Παρουσιάστηκε σφάλμα κατά την υποβολή: ' +
+                (error.message || 'Παρακαλώ προσπαθήστε ξανά αργότερα.')
             );
         }
     };
@@ -237,7 +227,7 @@ export const RegistrationForm = () => {
                                         type="text"
                                         value={currentMember.name}
                                         onChange={(e) => setCurrentMember({ ...currentMember, name: e.target.value })}
-                                        placeholder="Όνομα"
+                                        placeholder="Ονοματεπώνυμο"
                                         className="px-4 py-3 rounded-lg bg-gray-900/50 border border-gray-700 text-gray-100"
                                     />
                                     <div className="space-y-1">
@@ -309,7 +299,7 @@ export const RegistrationForm = () => {
                                 <button
                                     type="button"
                                     onClick={handleAddMember}
-                                    disabled={!currentMember.name || !currentMember.email || (!currentMember.school && !customSchool) || !!emailError}
+                                    disabled={!currentMember.name || !currentMember.email || (!currentMember.school && !customSchool) || (!currentMember.subject && !customSubject) || !!emailError}
                                     className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-gray-900/50 text-yellow-300 border border-gray-700 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     <PlusCircle className="w-5 h-5" />
