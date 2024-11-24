@@ -4,7 +4,7 @@ const PrivacyPolicy = () => {
     return (
         <div className="min-h-screen bg-gray-800 text-gray-100 p-8">
             <div className="max-w-4xl mx-auto bg-gray-900 p-6 rounded-lg shadow-lg">
-                <h1 className="text-2xl font-bold mb-4 text-yellow-400">
+                <h1 className="text-2xl font-bold mb-4 text-yellow-300">
                     Ενημέρωση για την Επεξεργασία Δεδομένων Προσωπικού Χαρακτήρα
                 </h1>
                 <p className="mb-4">
@@ -16,7 +16,7 @@ const PrivacyPolicy = () => {
                 </p>
 
                 <section className="mb-6">
-                    <h2 className="text-xl font-semibold text-yellow-400 mb-2">
+                    <h2 className="text-xl font-semibold text-yellow-300 mb-2">
                         Γενικές Πληροφορίες
                     </h2>
                     <p>
@@ -26,7 +26,7 @@ const PrivacyPolicy = () => {
                 </section>
 
                 <section className="mb-6">
-                    <h2 className="text-xl font-semibold text-yellow-400 mb-2">
+                    <h2 className="text-xl font-semibold text-yellow-300 mb-2">
                         Υπεύθυνος Επεξεργασίας
                     </h2>
                     <p>
@@ -36,7 +36,7 @@ const PrivacyPolicy = () => {
                 </section>
 
                 <section className="mb-6">
-                    <h2 className="text-xl font-semibold text-yellow-400 mb-2">
+                    <h2 className="text-xl font-semibold text-yellow-300 mb-2">
                         Ποια προσωπικά σας δεδομένα συλλέγονται
                     </h2>
                     <p>
@@ -45,7 +45,7 @@ const PrivacyPolicy = () => {
                 </section>
 
                 <section className="mb-6">
-                    <h2 className="text-xl font-semibold text-yellow-400 mb-2">
+                    <h2 className="text-xl font-semibold text-yellow-300 mb-2">
                         Σκοπός επεξεργασίας προσωπικών δεδομένων
                     </h2>
                     <p>
@@ -54,7 +54,7 @@ const PrivacyPolicy = () => {
                 </section>
 
                 <section className="mb-6">
-                    <h2 className="text-xl font-semibold text-yellow-400 mb-2">
+                    <h2 className="text-xl font-semibold text-yellow-300 mb-2">
                         Νομική Βάση Επεξεργασίας
                     </h2>
                     <p>
@@ -63,7 +63,7 @@ const PrivacyPolicy = () => {
                 </section>
 
                 <section className="mb-6">
-                    <h2 className="text-xl font-semibold text-yellow-400 mb-2">
+                    <h2 className="text-xl font-semibold text-yellow-300 mb-2">
                         Χρονικό διάστημα τήρησης
                     </h2>
                     <p>
@@ -72,7 +72,7 @@ const PrivacyPolicy = () => {
                 </section>
 
                 <section className="mb-6">
-                    <h2 className="text-xl font-semibold text-yellow-400 mb-2">
+                    <h2 className="text-xl font-semibold text-yellow-300 mb-2">
                         Δικαιώματα
                     </h2>
                     <ul className="list-disc list-inside">
@@ -84,12 +84,12 @@ const PrivacyPolicy = () => {
                     </ul>
                     <p className="mt-2">
                         Για θέματα προστασίας δεδομένων, μπορείτε να επικοινωνήσετε με τον Υπεύθυνο Προστασίας Δεδομένων
-                        στο <a href="mailto:dpo@uom.edu.gr" className="text-yellow-400 underline">dpo@uom.edu.gr</a>.
+                        στο <a href="mailto:dpo@uom.edu.gr" className="text-yellow-300 underline">dpo@uom.edu.gr</a>.
                     </p>
                 </section>
 
                 <footer className="text-sm text-gray-400">
-                    Αρμόδια αρχή:   <a href="https://www.dpa.gr" className="text-yellow-400 underline"> Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα
+                    Αρμόδια αρχή:   <a href="https://www.dpa.gr" className="text-yellow-300 underline"> Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα
                     </a>.
                 </footer>
             </div>

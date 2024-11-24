@@ -24,7 +24,8 @@ const HeroSection = () => {
 
     useEffect(() => {
         const calculateTimeLeft = () => {
-            const difference = new Date('2024-12-08').getTime() - new Date().getTime();
+            const targetDate = new Date('2024-12-08T10:00:00');
+            const difference = targetDate.getTime() - new Date().getTime();
             if (difference <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
 
             return {
@@ -69,9 +70,6 @@ const HeroSection = () => {
                     </div>
 
                     <div className="max-w-4xl mx-auto">
-                        {/* <h1 className="font-mono text-4xl md:text-5xl font-bold text-gray-100 mb-6 transform transition-all duration-500 hover:scale-105">
-                            Ανακαλύψτε τη δύναμη των<span className="-mx-[-10px] text-yellow-300 mt-2">ανοιχτών δεδομένων</span>
-                        </h1> */}
                         <TypingAnimation />
 
                         <p className="text-xl text-gray-400 mb-12">

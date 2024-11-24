@@ -71,20 +71,22 @@ const Timeline = () => {
     ];
 
     return (
-        <div className="bg-[#D6BE3C] max-w-4xl mx-auto py-0 px-4 ">
-            <div className="relative">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-gray-900" />
-                <div className="relative z-10 py-10">
-                    {timelineData.map((item, index) => (
-                        <TimelineItem
-                            key={index}
-                            {...item}
-                            isLeft={index % 2 === 0}
-                        />
-                    ))}
+        <div className="bg-[#D6BE3C]">
+            <div className="max-w-4xl mx-auto py-0 px-4 ">
+                <div className="relative">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-gray-900" />
+                    <div className="relative z-10 py-10">
+                        {timelineData.map((item, index) => (
+                            <TimelineItem
+                                key={index}
+                                {...item}
+                                isLeft={index % 2 === 0}
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

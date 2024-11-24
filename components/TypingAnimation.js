@@ -16,9 +16,9 @@ const TypingAnimation = () => {
     const [isPaused, setIsPaused] = useState(false);
 
     useEffect(() => {
-        const typeSpeed = 100; // Time between typing each character
-        const deleteSpeed = 50; // Time between deleting each character
-        const pauseTime = 1000; // Pause after a phrase is completed
+        const typeSpeed = 125; // Time between typing each character
+        const deleteSpeed = 75; // Time between deleting each character
+        const pauseTime = 1200; // Pause after a phrase is completed
 
         const currentPhrase = phrases[phraseIndex];
 
@@ -53,7 +53,7 @@ const TypingAnimation = () => {
 
     return (
         <h1 className="font-mono text-4xl md:text-5xl font-bold text-gray-100 mb-6 transform transition-all duration-500 hover:scale-105">
-            Ανακαλύψτε τη δύναμη{' '}
+            Ανακάλυψε τη δύναμη{' '}
             <span className="text-yellow-300 mt-1 inline-block min-w-[0px]">
                 {text}
                 <span className="animate-pulse">|</span>

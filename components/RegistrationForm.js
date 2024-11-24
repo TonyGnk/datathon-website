@@ -107,7 +107,7 @@ export const RegistrationForm = () => {
 
 
     return (
-        <div id='registration' className="min-h-screen bg-gray-900 py-16 px-4">
+        <div id='registration' className="bg-gray-900 py-16 px-4 pb-18">
             <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-12">
                     <div className="inline-flex items-center px-4 py-2 bg-blue-900/50 rounded-full mb-8 border border-blue-800">
