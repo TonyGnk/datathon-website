@@ -1,18 +1,28 @@
 import React, { useState } from 'react';
-import { PlusCircle, Users, Trash2, Send, Code, Lightbulb, Calendar, AlertCircle } from 'lucide-react';
+import { PlusCircle, Users, Trash2, Send, Code, Lightbulb, Clipboard, AlertCircle, Check } from 'lucide-react';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../firebase';
 
-const SCHOOLS = ['ΠΑΜΑΚ', 'ΑΠΘ', 'ΣΙΝΔΟ'];
+const SCHOOLS = [
+    'Πανεπιστήμιο Μακεδονίας', 'Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης', 'Διεθνές Πανεπιστήμιο'
+];
+
+const SCHOOL_SUBJECT = [
+    'Πληροφορική & Τεχνολογία', 'Διοίκηση & Επιχειρηματικότητα', 'Ηλεκτρονική Μηχανική', 'Υγεία', 'Νομική & Πολιτική'
+]
 
 export const RegistrationForm = () => {
     const [status, setStatus] = useState('');
     const [category, setCategory] = useState('');
     const [customSchool, setCustomSchool] = useState('');
+    const [customSubject, setCustomSubject] = useState('');
+
+    const [autoTeam, setAutoTeam] = useState(false);
     const [currentMember, setCurrentMember] = useState({
         name: '',
         email: '',
-        school: ''
+        school: '',
+        subject: ''
     });
     const [teamMembers, setTeamMembers] = useState([]);
     const [emailError, setEmailError] = useState('');
@@ -75,6 +85,7 @@ export const RegistrationForm = () => {
             teamName: e.target.teamName.value,
             category,
             members: teamMembers.map(({ id, ...member }) => member),
+            autoTeam: teamMembers.length === 1 ? autoTeam : false,
             createdAt: serverTimestamp(),
         };
 
@@ -94,6 +105,8 @@ export const RegistrationForm = () => {
             setCategory('');
             setCurrentMember({ name: '', email: '', school: '' });
             setCustomSchool('');
+            setCustomSubject('');
+            setAutoTeam(false);
 
         } catch (error) {
             console.error('Error submitting registration:', error);
@@ -105,13 +118,12 @@ export const RegistrationForm = () => {
         }
     };
 
-
     return (
         <div id='registration' className="bg-gray-900 py-16 px-4 pb-18">
             <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-12">
                     <div className="inline-flex items-center px-4 py-2 bg-blue-900/50 rounded-full mb-8 border border-blue-800">
-                        <Calendar className="w-5 h-5 text-yellow-300 mr-2" />
+                        <Clipboard className="w-5 h-5 text-yellow-300 mr-2" />
                         <span className="text-gray-300 font-medium">Δήλωση Συμμετοχής</span>
                     </div>
                     <h2 className="text-3xl font-bold text-gray-100 mb-4">
@@ -165,7 +177,6 @@ export const RegistrationForm = () => {
                                         <Lightbulb className="w-5 h-5" />
                                         Καινοτόμος Ιδέα
                                     </button>
-
                                 </div>
                             </div>
                         </div>
@@ -209,7 +220,7 @@ export const RegistrationForm = () => {
                                         type="text"
                                         value={currentMember.name}
                                         onChange={(e) => setCurrentMember({ ...currentMember, name: e.target.value })}
-                                        placeholder="Όνομα Μέλους"
+                                        placeholder="Όνομα"
                                         className="px-4 py-3 rounded-lg bg-gray-900/50 border border-gray-700 text-gray-100"
                                     />
                                     <div className="space-y-1">
@@ -217,7 +228,7 @@ export const RegistrationForm = () => {
                                             type="email"
                                             value={currentMember.email}
                                             onChange={handleEmailChange}
-                                            placeholder="Email Μέλους"
+                                            placeholder="Ιδρυματικό Email"
                                             className={`w-full px-4 py-3 rounded-lg bg-gray-900/50 border text-gray-100 ${emailError ? 'border-red-500' : 'border-gray-700'
                                                 }`}
                                         />
@@ -236,22 +247,46 @@ export const RegistrationForm = () => {
                                         onChange={(e) => setCurrentMember({ ...currentMember, school: e.target.value })}
                                         className="px-4 py-3 rounded-lg bg-gray-900/50 border border-gray-700 text-gray-100"
                                     >
-                                        <option value="">Επιλέξτε Σχολή</option>
+                                        <option value="">Επίλεξε Σχολή</option>
                                         {SCHOOLS.map(school => (
                                             <option key={school} value={school}>{school}</option>
                                         ))}
                                         <option value="other">Άλλο</option>
                                     </select>
 
+
                                     {currentMember.school === 'other' && (
                                         <input
                                             type="text"
                                             value={customSchool}
                                             onChange={(e) => setCustomSchool(e.target.value)}
-                                            placeholder="Συμπληρώστε τη σχολή σας"
+                                            placeholder="Συμπλήρωσε σχολή"
                                             className="px-4 py-3 rounded-lg bg-gray-900/50 border border-gray-700 text-gray-100"
                                         />
                                     )}
+
+                                    <select
+                                        value={currentMember.subject}
+                                        onChange={(e) => setCurrentMember({ ...currentMember, subject: e.target.value })}
+                                        className="px-4 py-3 rounded-lg bg-gray-900/50 border border-gray-700 text-gray-100"
+                                    >
+                                        <option value="">Επίλεξε Αντικείμενο Σπουδών</option>
+                                        {SCHOOL_SUBJECT.map(school => (
+                                            <option key={school} value={school}>{school}</option>
+                                        ))}
+                                        <option value="other">Άλλο</option>
+                                    </select>
+
+                                    {currentMember.subject === 'other' && (
+                                        <input
+                                            type="text"
+                                            value={customSubject}
+                                            onChange={(e) => setCustomSubject(e.target.value)}
+                                            placeholder="Συμπλήρωσε αντικείμενο σπουδών"
+                                            className="px-4 py-3 rounded-lg bg-gray-900/50 border border-gray-700 text-gray-100"
+                                        />
+                                    )}
+
                                 </div>
 
                                 <button
@@ -263,6 +298,36 @@ export const RegistrationForm = () => {
                                     <PlusCircle className="w-5 h-5" />
                                     Προσθήκη Μέλους
                                 </button>
+
+                                {(teamMembers.length === 0 || teamMembers.length === 1 || teamMembers.length === 2) && (
+                                    <label className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-900/50 border border-gray-700 cursor-pointer group">
+                                        <div className="relative">
+                                            <input
+                                                type="checkbox"
+                                                checked={autoTeam}
+                                                onChange={(e) => setAutoTeam(e.target.checked)}
+                                                className="sr-only peer"
+                                            />
+                                            <div className="w-6 h-6 border-2 border-gray-500 rounded-md peer-checked:border-yellow-300 peer-checked:bg-blue-900 flex items-center justify-center transition-all duration-200">
+                                                <svg
+                                                    className={`w-4 h-4 text-yellow-300 transition-transform duration-200 ${autoTeam ? 'scale-100' : 'scale-0'}`}
+                                                    fill="none"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    strokeWidth="2"
+                                                    viewBox="0 0 24 24"
+                                                    stroke="currentColor"
+                                                >
+                                                    <path d="M5 13l4 4L19 7" />
+                                                </svg>
+                                            </div>
+
+                                        </div>
+                                        <span className="text-gray-300 group-hover:text-yellow-300 transition-colors duration-200">
+                                            Ένωση με άλλη ομάδα
+                                        </span>
+                                    </label>
+                                )}
                             </div>
                         )}
                     </div>

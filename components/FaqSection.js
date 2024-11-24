@@ -70,8 +70,9 @@ const FaqSection = () => {
 
             <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
-                    <h2 className="font-mono text-4xl font-bold text-gray-100 mb-4">
-                        Συχνές <span className="mx-[-10px] text-yellow-300">Ερωτήσεις</span>
+                    <h2 className="font-mono text-4xl font-bold text-gray-100 mb-4 text-center flex flex-wrap justify-center gap-x-2">
+                        <span>Συχνές</span>
+                        <span className="text-yellow-300">Ερωτήσεις</span>
                     </h2>
                     <p className="text-xl text-gray-400">
                         Βρείτε απαντήσεις στις πιο συχνές ερωτήσεις για το Datathon

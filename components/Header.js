@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu } from 'lucide-react';
+import { Menu, Clipboard } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -74,7 +74,7 @@ export const Header = () => {
             }`}>
             <div className="relative">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="flex justify-between items-center h-16">
+                    <div className="flex items-center h-16">
                         <div
                             className="flex-shrink-0 cursor-pointer"
                             onClick={handleLogoClick}
@@ -85,6 +85,8 @@ export const Header = () => {
                                 className="h-12 w-auto"
                             />
                         </div>
+                        <div className="flex-1" />
+
 
                         <nav className="hidden md:flex space-x-4">
                             {menuItems.map((item) => (
@@ -121,8 +123,17 @@ export const Header = () => {
                             </div>
                         </nav>
 
+                        <div className="md:hidden mr-2">
+                            <button
+                                onClick={() => scrollToSection('registration')}
+                                className="p-2 rounded-md text-gray-300 hover:text-yellow-300 hover:bg-gray-800"
+                            >
+                                <Clipboard className="h-6 w-6 text-yellow-300" />
+                            </button>
+                        </div>
                         <div className="md:hidden">
                             <button
+                                // On click navigate to "Εγγραφή" section
                                 onClick={() => setIsOpen(!isOpen)}
                                 className="p-2 rounded-md text-gray-300 hover:text-yellow-300 hover:bg-gray-800"
                             >

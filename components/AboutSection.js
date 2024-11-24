@@ -31,8 +31,12 @@ const AboutSection = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                 <div className="text-center mb-16 relative">
-                    <h2 className="inline-block text-4xl font-mono font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500 mb-6">
-                        Τι είναι το Datathon @UoM;
+                    <h2 className="font-mono text-4xl font-bold text-gray-100 mb-4 text-center flex flex-wrap justify-center gap-x-2  text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-400">
+                        <span>Τι</span>
+                        <span>είναι</span>
+                        <span>το</span>
+                        <span>Datathon</span>
+                        <span>@UoM;</span>
                     </h2>
                 </div>
 
@@ -54,7 +58,7 @@ const AboutSection = () => {
                                 </div>
                                 <div className="flex items-center space-x-3 text-gray-300">
                                     <Users className="w-5 h-5 text-yellow-300" />
-                                    <span>1-4 Άτόμα</span>
+                                    <span>1-4 άτομα</span>
                                 </div>
                                 <div className="flex items-center space-x-3 text-gray-300">
                                     <Building2Icon className="w-5 h-5 text-yellow-300" />

@@ -52,13 +52,6 @@ const TypingAnimation = () => {
     }, [text, isDeleting, isPaused, phraseIndex]);
 
     return (
-        // <h1 className="font-mono text-4xl md:text-5xl font-bold text-gray-100 mb-6 transform transition-all duration-500 hover:scale-105">
-        //     Ανακάλυψε τη δύναμη{' '}
-        //     <span className="text-yellow-300 mt-1 inline-block min-w-[0px]">
-        //         {text}
-        //         <span className="animate-pulse">|</span>
-        //     </span>
-        // </h1>
         <h2 className="font-mono text-4xl md:text-5xl font-bold text-gray-100 mb-6 text-center flex flex-wrap justify-center gap-x-2">
             <span>Ανακάλυψε{' '}</span>
             <span>τη{' '}</span>
@@ -66,6 +59,7 @@ const TypingAnimation = () => {
             {text.trim().split(' ').map((word, index) => (
                 <span key={index} className="text-yellow-300">{word}{' '}</span>
             ))}
+            <span className="animate-pulse text-yellow-200">|</span>
             {/* <span className="text-yellow-300">{text}</span> */}
         </h2>
     );
