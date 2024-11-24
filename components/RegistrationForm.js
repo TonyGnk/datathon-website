@@ -55,14 +55,16 @@ export const RegistrationForm = () => {
             return;
         }
 
-        if (currentMember.name && currentMember.email && (currentMember.school || customSchool)) {
+        if (currentMember.name && currentMember.email && (currentMember.school || customSchool) && (currentMember.subject || customSubject)) {
             setTeamMembers([...teamMembers, {
                 ...currentMember,
                 school: currentMember.school === 'other' ? customSchool : currentMember.school,
+                subject: currentMember.subject === 'other' ? customSubject : currentMember.subject,
                 id: Date.now()
             }]);
-            setCurrentMember({ name: '', email: '', school: '' });
+            setCurrentMember({ name: '', email: '', school: '', subject: '' });
             setCustomSchool('');
+            setCustomSubject('');
             setEmailError('');
         }
     };
