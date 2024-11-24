@@ -3,6 +3,41 @@ import QRCode from 'qrcode';
 import path from 'path';
 import fs from 'fs/promises';
 
+const debugSendGridSetup = () => {
+    if (!process.env.SENDGRID_API_KEY) {
+        throw new Error('SENDGRID_API_KEY is not defined in environment variables');
+    }
+
+    if (!process.env.SENDER_EMAIL) {
+        throw new Error('SENDER_EMAIL is not defined in environment variables');
+    }
+
+    if (!process.env.ORGANIZER_EMAIL) {
+        throw new Error('ORGANIZER_EMAIL is not defined in environment variables');
+    }
+
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    return true;
+};
+
+async function sendEmailWithErrorHandling(msg) {
+    try {
+        const response = await sgMail.send(msg);
+        console.log('SendGrid Response:', {
+            statusCode: response[0].statusCode,
+            headers: response[0].headers,
+        });
+        return response;
+    } catch (error) {
+        console.error('SendGrid Error Details:', {
+            code: error.code,
+            message: error.message,
+            response: error.response?.body,
+        });
+        throw error;
+    }
+}
+
 // Example usage with SendGrid's own file attachment API
 async function generateEmailWithSendGridAttachments(teamData) {
     const emailHtml = `
@@ -325,6 +360,9 @@ export default async function handler(req, res) {
     }
 
     try {
+        // Initialize SendGrid with debug info
+        debugSendGridSetup();
+
         const { teamName, category, members, autoTeam, teamId } = req.body;
 
         if (!teamName || !category || !members?.length) {
@@ -333,25 +371,63 @@ export default async function handler(req, res) {
 
         const teamData = { teamName, category, members, autoTeam, teamId };
 
+        // Test SendGrid configuration
+        const testMsg = {
+            to: process.env.ORGANIZER_EMAIL,
+            from: {
+                email: process.env.SENDER_EMAIL,
+                name: 'Datathon Registration'
+            },
+            subject: 'SendGrid Test Email',
+            text: 'This is a test email to verify SendGrid configuration.',
+        };
 
-        await generateEmailWithSendGridAttachments(teamData);
+        // Try sending a test email first
+        try {
+            await sendEmailWithErrorHandling(testMsg);
+            console.log('Test email sent successfully');
+        } catch (error) {
+            console.error('Test email failed:', error);
+            return res.status(500).json({
+                success: false,
+                error: 'SendGrid configuration test failed',
+                details: error.message
+            });
+        }
 
-        //For every member run the gerateEmailToMember function
+        // If test passes, proceed with actual emails
+        const emailPromises = [];
+
+        // Add organizer email
+        emailPromises.push(generateEmailWithSendGridAttachments(teamData));
+
+        // Add member emails
         teamData.members.forEach((member, index) => {
-            generateEmailToMember(teamData, teamData.teamId, index, member.name, member.email);
+            emailPromises.push(
+                generateEmailToMember(teamData, teamData.teamId, index, member.name, member.email)
+            );
         });
+
+        // Wait for all emails to be sent
+        await Promise.all(emailPromises);
 
         return res.status(200).json({
             success: true,
-            message: 'Registration email sent successfully'
+            message: 'Registration emails sent successfully'
         });
 
     } catch (error) {
-        console.error('Error processing registration:', error);
+        console.error('Error processing registration:', {
+            error: error.message,
+            stack: error.stack,
+            sendgridError: error.response?.body
+        });
+
         return res.status(500).json({
             success: false,
             error: 'Failed to process registration',
-            details: error.message
+            details: error.message,
+            sendgridError: error.response?.body
         });
     }
 }
