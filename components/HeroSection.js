@@ -69,12 +69,12 @@ const HeroSection = () => {
 
                     <div className="max-w-4xl mx-auto">
                         <h1 className="font-mono text-4xl md:text-5xl font-bold text-gray-100 mb-6 transform transition-all duration-500 hover:scale-105">
-                            Ανακαλύψτε τη δύναμη των δεδομένων στο
-                            <span className="block text-yellow-300 mt-2">Datathon 2024</span>
+                            Ανακαλύψτε τη δύναμη των
+                            <span className="block text-yellow-300 mt-2">ανοιχτών δεδομένων</span>
                         </h1>
 
                         <p className="text-xl text-gray-400 mb-12">
-                            Μια μοναδική εμπειρία 24 ωρών όπου η καινοτομία συναντά την τεχνολογία
+                            Μια μοναδική εμπειρία όπου η καινοτομία συναντά την τεχνολογία
                         </p>
 
                         <div className="inline-block bg-gray-900/50 backdrop-blur-sm rounded-2xl p-9 mb-10 shadow-lg border border-gray-700 hover:border-yellow-400 transition-all duration-300">
@@ -91,28 +91,13 @@ const HeroSection = () => {
                         </div>
 
                         <div className="space-x-4 relative">
-                            {/* <button
-                                onClick={scrollToRegister}
-                                className="inline-flex items-center px-8 py-4 bg-blue-900 text-yellow-300 rounded-lg font-medium text-lg shadow-lg transition-all duration-300 hover:bg-blue-800 hover:shadow-xl hover:scale-105 border border-blue-800 hover:border-yellow-300"
-                            >
-                                Δήλωσε Συμμετοχή
-                                <ArrowRight className="ml-2 w-5 h-5" />
-                            </button> */}
                             <button
                                 onClick={scrollToNextSection}
-                                className="inline-flex items-center px-8 py-4 bg-blue-900 text-yellow-300 rounded-lg font-medium text-lg shadow-lg transition-all duration-300 hover:bg-blue-800 hover:shadow-xl hover:scale-105 border border-blue-800 hover:border-yellow-300"
+                                className="inline-flex items-center justify-center px-8 py-4 bg-blue-900 text-yellow-300 rounded-lg font-medium text-lg shadow-lg transition-all duration-300 hover:bg-blue-800 hover:shadow-xl hover:scale-105 border border-blue-800 hover:border-yellow-300"
                             >
                                 Δήλωσε Συμμετοχή
-                                <ChevronDown className="ml-2 w-5 h-5 animate-bounce" />
+                                <ChevronDown className="mt-1 ml-2 w-5 h-5 animate-bounce" />
                             </button>
-
-                            {/* <button
-                                onClick={scrollToNextSection}
-                                className="inline-flex items-center px-8 py-4 bg-gray-800/50 text-gray-300 rounded-lg font-medium text-lg shadow-lg transition-all duration-300 hover:bg-gray-700/50 hover:shadow-xl hover:scale-105 border border-gray-700 hover:border-yellow-300"
-                            >
-                                Μάθετε Περισσότερα
-                                <ChevronDown className="ml-2 w-5 h-5 animate-bounce" />
-                            </button> */}
                         </div>
                     </div>
                 </div>

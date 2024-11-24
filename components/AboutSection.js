@@ -28,7 +28,7 @@ const AboutSection = () => {
     return (
         <section className="relative py-24 bg-gray-900 overflow-hidden">
             {/* Add a horizontal divider colored red */}
-            <div className="absolute inset-x-0 top-0 h-2 bg-gradient-to-r from-yellow-300 to-gray-700" />
+            <div className="absolute inset-x-0 top-0 h-1 mt-2 bg-gradient-to-r from-gray-400 to-gray-700" />
 
             <div id='whatIsDatathon' className="absolute inset-0 bg-[linear-gradient(rgba(25,25,25,1)_2px,transparent_2px),linear-gradient(90deg,rgba(25,25,25,1)_2px,transparent_2px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)] opacity-30" />
 

@@ -9,7 +9,7 @@ const SponsorCard = ({ name, description, logo, link, tier }) => {
                     <img
                         src={logo}
                         alt={`${name} logo`}
-                        className="max-h-full w-auto object-contain "
+                        className="max-h-full w-auto object-contain rounded-lg"
                     />
                 </div>
                 <h3 className="text-xl font-semibold mb-2 text-gray-100">{name}</h3>

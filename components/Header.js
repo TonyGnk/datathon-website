@@ -139,7 +139,7 @@ export const Header = () => {
                             </button>
                         ))}
                         <Link
-                            href="https://datathon.uom.gr/"
+                            href="https://datathon.uom.gr/archive-2023/"
                             target="_blank"
                             className="block w-full text-left px-4 py-2 text-gray-300 hover:bg-gray-800/50 hover:text-yellow-300"
                         >
