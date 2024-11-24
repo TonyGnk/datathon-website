@@ -92,11 +92,11 @@ const SponsorsSection = () => {
 
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-14">
-                    <h2 className="font-mono text-4xl font-bold text-gray-100 mb-3">
-                        Οι<span className="mx-[10px] text-yellow-300">Υποστηρικτές</span>μας</h2>
+                    <h2 className="font-mono text-4xl font-bold text-gray-100 mb-3 text-yellow-300">
+                        Υποστηρικτές</h2>
 
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                        Ευχαριστούμε τους συνδιοργανωτές και χορηγούς μας που κάνουν το Datathon 2024 πραγματικότητα
+                        Ευχαριστούμε τους συνδιοργανωτές και χορηγούς μας που κάνουν το Datathon πραγματικότητα
                     </p>
                 </div>
 
@@ -136,6 +136,7 @@ const SponsorsSection = () => {
                                 Υποστηρικτές
                             </span>
                         </h3>
+
                         <div className="grid md:grid-cols-3 gap-6">
                             {supportSponsors.map((sponsor, index) => (
                                 <SponsorCard key={index} {...sponsor} tier="support" />

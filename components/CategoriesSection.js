@@ -120,9 +120,13 @@ const CategoriesSection = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
-                    <h2 className="font-mono text-3xl font-bold text-gray-100 mb-4">
+                    {/* <h2 className="font-mono text-3xl font-bold text-gray-100 mb-4">
                         Κατηγορίες
-                        <span className="-mx-[10px] text-yellow-300"> Συμμετοχής </span>
+                        <span className="text-yellow-300"> Συμμετοχής </span>
+                    </h2> */}
+                    <h2 className="font-mono text-3xl font-bold text-gray-100 mb-4 text-center flex flex-wrap justify-center gap-x-2">
+                        <span>Κατηγορίες</span>
+                        <span className="text-yellow-300">Συμμετοχής</span>
                     </h2>
                     <p className="text-lg text-gray-300 max-w-2xl mx-auto">
                         Επίλεξε την κατηγορία που ταιριάζει καλύτερα στις δεξιότητες και τα ενδιαφέροντά σου
