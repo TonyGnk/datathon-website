@@ -4,7 +4,9 @@ const phrases = [
     'των ανοιχτών δεδομένων',
     'του ιστού',
     'της τεχνολογίας',
+    'των ανοιχτών δεδομένων',
     'του μέλλοντος',
+    'των API',
 ];
 
 const TypingAnimation = () => {
@@ -52,7 +54,7 @@ const TypingAnimation = () => {
     return (
         <h1 className="font-mono text-4xl md:text-5xl font-bold text-gray-100 mb-6 transform transition-all duration-500 hover:scale-105">
             Ανακαλύψτε τη δύναμη{' '}
-            <span className="text-yellow-300 mt-2 inline-block min-w-[200px]">
+            <span className="text-yellow-300 mt-1 inline-block min-w-[0px]">
                 {text}
                 <span className="animate-pulse">|</span>
             </span>
