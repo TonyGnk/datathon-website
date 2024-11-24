@@ -4,7 +4,7 @@ import { ExternalLink } from 'lucide-react';
 const SponsorCard = ({ name, description, logo, link, tier }) => {
     return (
         <div className="group relative overflow-hidden rounded-xl bg-gradient-to-r from-blue-900 to-blue-800 p-px transition-all duration-300 hover:scale-105">
-            <div className="h-full rounded-xl bg-gray-900/90 backdrop-blur-sm border border-blue-800 p-6">
+            <div className="h-full rounded-xl bg-gray-900/90 border border-blue-800 p-6">
                 <div className="h-24 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-105">
                     <img
                         src={logo}
