@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, ArrowRight, ChevronDown } from 'lucide-react';
 import AnimatedNetworkBackground from './AnimatedNetworkBackground';
+import TypingAnimation from './TypingAnimation';
 
 const TimeUnit = ({ value, label }) => (
     <div className="flex flex-col items-center transform transition-transform hover:scale-110 duration-300">
@@ -53,7 +54,7 @@ const HeroSection = () => {
     };
 
     return (
-        <div className="relative min-h-screen bg-gray-900 flex items-center mt-1">
+        <div className="relative min-h-screen bg-gray-900 flex items-center">
             {/* Position the background with a lower z-index */}
             <div className="absolute inset-0 z-0">
                 <AnimatedNetworkBackground />
@@ -68,10 +69,10 @@ const HeroSection = () => {
                     </div>
 
                     <div className="max-w-4xl mx-auto">
-                        <h1 className="font-mono text-4xl md:text-5xl font-bold text-gray-100 mb-6 transform transition-all duration-500 hover:scale-105">
-                            Ανακαλύψτε τη δύναμη των
-                            <span className="block text-yellow-300 mt-2">ανοιχτών δεδομένων</span>
-                        </h1>
+                        {/* <h1 className="font-mono text-4xl md:text-5xl font-bold text-gray-100 mb-6 transform transition-all duration-500 hover:scale-105">
+                            Ανακαλύψτε τη δύναμη των<span className="-mx-[-10px] text-yellow-300 mt-2">ανοιχτών δεδομένων</span>
+                        </h1> */}
+                        <TypingAnimation />
 
                         <p className="text-xl text-gray-400 mb-12">
                             Μια μοναδική εμπειρία όπου η καινοτομία συναντά την τεχνολογία

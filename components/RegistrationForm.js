@@ -76,8 +76,6 @@ export const RegistrationForm = () => {
             category,
             members: teamMembers.map(({ id, ...member }) => member),
             createdAt: serverTimestamp(),
-            status: 'pending',
-            submittedAt: new Date().toISOString()
         };
 
         try {
@@ -109,7 +107,7 @@ export const RegistrationForm = () => {
 
 
     return (
-        <div className="min-h-screen bg-gray-900 py-16 px-4">
+        <div id='registration' className="min-h-screen bg-gray-900 py-16 px-4">
             <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-12">
                     <div className="inline-flex items-center px-4 py-2 bg-blue-900/50 rounded-full mb-8 border border-blue-800">
@@ -123,7 +121,9 @@ export const RegistrationForm = () => {
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-8">
-                    <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
+                    <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700
+                    hover:border-yellow-400 transition-colors duration-300"
+                    >
                         <div className="space-y-6">
                             <div>
                                 <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -170,7 +170,7 @@ export const RegistrationForm = () => {
                         </div>
                     </div>
 
-                    <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700">
+                    <div className="bg-gray-800/50 rounded-2xl p-8 border border-gray-700 hover:border-yellow-400 transition-colors duration-300">
                         <div className="flex items-center justify-between mb-6">
                             <h3 className="text-xl font-semibold text-gray-100">Μέλη Ομάδας</h3>
                             <div className="flex items-center gap-2 text-yellow-300">
