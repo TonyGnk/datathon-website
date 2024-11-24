@@ -82,21 +82,40 @@ export const RegistrationForm = () => {
             return;
         }
 
-        const formData = {
+
+        const firebaseFormData = {
             teamName: e.target.teamName.value,
             category,
             members: teamMembers.map(({ id, ...member }) => member),
-            autoTeam: teamMembers.length === 1 ? autoTeam : false,
-            teamId: "8dzV5eDQfuxflFocJuns"
+            autoTeam: teamMembers.length === 1 ? autoTeam : false
         };
 
         try {
+            if (!db) {
+                throw new Error('Firebase is not initialized');
+            }
+            const registrationsRef = collection(db, 'participants');
+            const docRef = await addDoc(registrationsRef, {
+                ...firebaseFormData,
+                createdAt: serverTimestamp(),
+            });
+
+            console.log('New document created with ID:', docRef.id);
+
             const response = await fetch('/api/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(formData),
+                body: JSON.stringify(
+                    {
+                        teamName: e.target.teamName.value,
+                        category,
+                        members: teamMembers.map(({ id, ...member }) => member),
+                        autoTeam: teamMembers.length === 1 ? autoTeam : false,
+                        teamId: docRef.id
+                    }
+                )
             });
 
             const data = await response.json();
