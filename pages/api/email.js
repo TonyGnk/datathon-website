@@ -1,40 +1,61 @@
-// import nodemailer from 'nodemailer';
+import sgMail from '@sendgrid/mail';
 
-// export default async function handler(req, res) {
-//     if (req.method !== 'POST') {
-//         return res.status(405).json({ message: 'Method not allowed' });
-//     }
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-//     const transporter = nodemailer.createTransport({
-//         host: process.env.SMTP_HOST,
-//         port: process.env.SMTP_PORT,
-//         secure: false,
-//         auth: {
-//             user: process.env.SMTP_USER,
-//             pass: process.env.SMTP_PASSWORD
-//         }
-//     });
+export const sendRegistrationEmail = async (formData) => {
+    const { teamName, category, members } = formData;
 
-//     try {
-//         await transporter.sendMail({
-//             from: process.env.SMTP_USER,
-//             to: req.body.email,
-//             subject: 'Datathon Registration Confirmation',
-//             html: `
-//         <h1>Thanks for registering for the Datathon!</h1>
-//         <p>Hi ${req.body.name},</p>
-//         <p>We've received your registration for the upcoming Datathon. Here are your details:</p>
-//         <ul>
-//           <li>Skill Level: ${req.body.skill}</li>
-//           <li>Team Status: ${req.body.team}</li>
-//         </ul>
-//         <p>We'll be in touch with more information soon!</p>
-//       `
-//         });
+    // Email to organizers
+    const organizerEmail = {
+        to: 'your-email@example.com', // Replace with your email
+        from: 'your-verified-sender@yourdomain.com', // Must be verified in SendGrid
+        subject: `New Datathon Registration: ${teamName}`,
+        html: `
+      <h2>New Team Registration</h2>
+      <p><strong>Team Name:</strong> ${teamName}</p>
+      <p><strong>Category:</strong> ${category}</p>
+      <h3>Team Members:</h3>
+      <ul>
+        ${members.map(member => `
+          <li>
+            <p><strong>Name:</strong> ${member.name}</p>
+            <p><strong>Email:</strong> ${member.email}</p>
+            <p><strong>School:</strong> ${member.school}</p>
+            <p><strong>Subject:</strong> ${member.subject}</p>
+          </li>
+        `).join('')}
+      </ul>
+    `
+    };
 
-//         res.status(200).json({ message: 'Email sent successfully' });
-//     } catch (error) {
-//         console.error('Error sending email:', error);
-//         res.status(500).json({ message: 'Failed to send email' });
-//     }
-// }
+    // Email to team members
+    const memberEmails = members.map(member => ({
+        to: member.email,
+        from: 'your-verified-sender@yourdomain.com',
+        subject: 'Datathon Registration Confirmation',
+        html: `
+      <h2>Thank you for registering for the Datathon!</h2>
+      <p>Your registration has been received successfully.</p>
+      <p><strong>Team Name:</strong> ${teamName}</p>
+      <p><strong>Category:</strong> ${category}</p>
+      <h3>Team Members:</h3>
+      <ul>
+        ${members.map(m => `<li>${m.name} (${m.email})</li>`).join('')}
+      </ul>
+      <p>We will contact you soon with further information.</p>
+    `
+    }));
+
+    try {
+        // Send email to organizers
+        await sgMail.send(organizerEmail);
+
+        // Send confirmation emails to all team members
+        await Promise.all(memberEmails.map(email => sgMail.send(email)));
+
+        return { success: true };
+    } catch (error) {
+        console.error('Error sending emails:', error);
+        return { success: false, error };
+    }
+};

@@ -94,8 +94,23 @@ export const RegistrationForm = () => {
                 throw new Error('Firebase is not initialized');
             }
 
-            const registrationsRef = collection(db, 'participants');
-            const docRef = await addDoc(registrationsRef, formData);
+            try {
+                const registrationsRef = collection(db, 'participants');
+                const docRef = await addDoc(registrationsRef, formData);
+
+                // Send emails
+                const emailResult = await sendRegistrationEmail(formData);
+                if (!emailResult.success) {
+                    console.error('Error sending confirmation emails:', emailResult.error);
+                }
+
+                setStatus('success');
+                // ... rest of your success handling
+            } catch (error) {
+                console.error('Error:', error);
+                setStatus('error');
+                // ... rest of your error handling
+            }
 
             console.log('Registration submitted successfully with ID:', docRef.id);
 
