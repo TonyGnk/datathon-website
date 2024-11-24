@@ -60,14 +60,14 @@ const TimelineItem = ({ time, title, icon: Icon, isLeft }) => {
 
 const Timeline = () => {
     const timelineData = [
-        { time: "10:00 π.μ. – 10:30 π.μ.", title: "Εγγραφές", icon: UserCheck },
-        { time: "10:30 π.μ. – 11:00 π.μ.", title: "Σύντομη παρουσίαση event", icon: Presentation },
-        { time: "11:00 π.μ. – 2:00 μ.μ.", title: "Εργασία ομάδων", icon: Users },
-        { time: "2:00 μ.μ. – 2:45 μ.μ.", title: "Break – Light lunch", icon: Coffee },
-        { time: "2:45 μ.μ. – 5:00 μ.μ.", title: "Εργασία ομάδων", icon: Target },
-        { time: "5:00 μ.μ. – 6:00 μ.μ.", title: "Παρουσίαση αποτελεσμάτων ομάδων", icon: Presentation },
-        { time: "6:00 μ.μ. – 6:40 μ.μ.", title: "Αξιολόγηση από επιτροπή", icon: Award },
-        { time: "6:40 μ.μ. – 7:00 μ.μ.", title: "Απονομή βραβείων", icon: Trophy }
+        { time: "10:00. – 10:30", title: "Εγγραφές", icon: UserCheck },
+        { time: "10:30 – 11:00", title: "Σύντομη παρουσίαση event", icon: Presentation },
+        { time: "11:00 – 14:00", title: "Εργασία ομάδων", icon: Users },
+        { time: "14:00 – 14:45", title: "Break – Light lunch", icon: Coffee },
+        { time: "14:45 – 15:00", title: "Εργασία ομάδων", icon: Target },
+        { time: "17:00 – 18:00", title: "Παρουσίαση αποτελεσμάτων ομάδων", icon: Presentation },
+        { time: "18:00 – 18:40", title: "Αξιολόγηση από επιτροπή", icon: Award },
+        { time: "18:40 – 19:00", title: "Απονομή βραβείων", icon: Trophy }
     ];
 
     return (

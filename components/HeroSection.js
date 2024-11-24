@@ -77,10 +77,10 @@ const HeroSection = () => {
                             Μια μοναδική εμπειρία 24 ωρών όπου η καινοτομία συναντά την τεχνολογία
                         </p>
 
-                        <div className="inline-block bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 mb-12 shadow-lg border border-blue-900 hover:border-yellow-300 transition-all duration-300">
+                        <div className="inline-block bg-gray-900/50 backdrop-blur-sm rounded-2xl p-9 mb-10 shadow-lg border border-gray-700 hover:border-yellow-400 transition-all duration-300">
                             <h2 className="text-gray-300 font-medium mb-6 flex items-center justify-center">
                                 <Clock className="w-5 h-5 mr-2 text-yellow-300" />
-                                Η αντίστροφη μέτρηση ξεκίνησε
+                                Η αντίστροφη μέτρηση ξεκίνησε!
                             </h2>
                             <div className="flex justify-center gap-4">
                                 <TimeUnit value={timeLeft.days} label="Ημέρες" />

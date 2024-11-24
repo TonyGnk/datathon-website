@@ -6,12 +6,12 @@ const AboutSection = () => {
         {
             icon: Code2,
             title: "Καινοτομία",
-            desc: "24ωρος διαγωνισμός ανοιχτών δεδομένων"
+            desc: "Χρήση τεχνολογιών για την επίλυση προβλημάτων"
         },
         {
             icon: Users2,
             title: "Συνεργασία",
-            desc: "Ομάδες φοιτητών από όλη την Ελλάδα"
+            desc: "Δημιουργία ομάδων για κοινό στόχο"
         },
         {
             icon: Brain,
@@ -53,7 +53,7 @@ const AboutSection = () => {
                             <div className="space-y-4">
                                 <div className="flex items-center space-x-3 text-gray-300">
                                     <Clock className="w-5 h-5 text-yellow-300" />
-                                    <span>24ωρη Διάρκεια</span>
+                                    <span>7 ώρες</span>
                                 </div>
                                 <div className="flex items-center space-x-3 text-gray-300">
                                     <Users className="w-5 h-5 text-yellow-300" />
@@ -77,7 +77,7 @@ const AboutSection = () => {
                         return (
                             <div
                                 key={index}
-                                className="group relative bg-gray-800/30 backdrop-blur-sm rounded-xl p-8
+                                className="group relative bg-gray-700/30 backdrop-blur-sm rounded-xl p-8
                                 transform transition-all duration-500 hover:scale-105 hover:bg-gray-800/50
                                 border border-blue-900/30 hover:border-yellow-500/50"
                             >

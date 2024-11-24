@@ -1,15 +1,20 @@
 import React from 'react';
 import { Trophy, Cloud, Rocket, ArrowRight } from 'lucide-react';
+import AnimatedNetworkBackground2 from './AnimatedNetworkBackground2';
 
 const PrizesSection = () => {
     return (
         //Make this color background #FDE047
         <section id='prizes' className="relative py-20 bg-gray-900">
             {/* Abstract geometric background */}
+            {/* <div className="absolute inset-0 z-0">
+                <AnimatedNetworkBackground2 />
+            </div> */}
+
             <div className="absolute inset-0 overflow-hidden opacity-5">
                 <div className="absolute inset-0"
                     style={{
-                        backgroundImage: 'radial-gradient(#FFD60A 3px, #111827 4px)',
+                        backgroundImage: 'radial-gradient(#FFD60A 2px, #111827 1px)',
                         backgroundSize: '24px 24px'
                     }}
                 />

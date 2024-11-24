@@ -79,12 +79,12 @@ const SponsorsSection = () => {
     ];
 
     return (
-        <section className="relative py-20 bg-gray-900 overflow-hidden">
+        <section className="relative py-10 bg-gray-900 overflow-hidden">
             {/* Abstract background with yellow accent */}
             <div className="absolute inset-0 overflow-hidden opacity-5">
                 <div className="absolute inset-0"
                     style={{
-                        backgroundImage: 'radial-gradient(#FFD60A 3px, #111827 4px)',
+                        backgroundImage: 'radial-gradient(#FFD60A 2px, #111827 1px)',
                         backgroundSize: '24px 24px'
                     }}
                 />
@@ -92,7 +92,7 @@ const SponsorsSection = () => {
 
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
-                    <h2 className="font-mono text-4xl font-bold text-gray-100 mb-4">
+                    <h2 className="font-mono text-4xl font-bold text-gray-100 mb-3">
                         Οι<span className="mx-[10px] text-yellow-300">Υποστηρικτές</span>μας
                     </h2>
 

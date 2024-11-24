@@ -101,7 +101,7 @@ const CategoriesSection = () => {
     ];
 
     return (
-        <section id="categories" className="py-0 bg-gray-900 pb-6">
+        <section id="categories" className="py-0 bg-gray-900 pb-8">
             {/* Network lines background for section */}
             <div className="absolute inset-0 overflow-hidden opacity-5">
                 {[...Array(20)].map((_, i) => (
@@ -133,26 +133,6 @@ const CategoriesSection = () => {
                     {categories.map((category, index) => (
                         <CategoryCard key={index} {...category} />
                     ))}
-                </div>
-
-                <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div className="bg-gray-900 border border-blue-900 rounded-lg p-6 text-center">
-                        <Users className="w-8 h-8 text-yellow-300 mx-auto mb-3" />
-                        <h3 className="font-mono font-semibold mb-2 text-gray-100">Ομάδες 1-4 ατόμων</h3>
-                        <p className="text-gray-300">Συνεργαστείτε για καλύτερα αποτελέσματα</p>
-                    </div>
-
-                    <div className="bg-gray-900 border border-blue-900 rounded-lg p-6 text-center">
-                        <Clock className="w-8 h-8 text-yellow-300 mx-auto mb-3" />
-                        <h3 className="font-mono font-semibold mb-2 text-gray-100">Διάρκεια 24 ωρών</h3>
-                        <p className="text-gray-300">Εντατική ανάπτυξη ιδεών και λύσεων</p>
-                    </div>
-
-                    <div className="bg-gray-900 border border-blue-900 rounded-lg p-6 text-center">
-                        <Award className="w-8 h-8 text-yellow-300 mx-auto mb-3" />
-                        <h3 className="font-mono font-semibold mb-2 text-gray-100">Σημαντικά Έπαθλα</h3>
-                        <p className="text-gray-300">Βραβεία και ευκαιρίες για κάθε κατηγορία</p>
-                    </div>
                 </div>
             </div>
         </section>
