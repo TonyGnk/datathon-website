@@ -51,7 +51,7 @@ const FaqSection = () => {
     };
 
     return (
-        <section id='faq' className="relative py-20 bg-gray-900">
+        <section id='faq' className="relative py-2 bg-gray-900">
             {/* Abstract geometric background similar to prizes section */}
             <div className="absolute inset-0 overflow-hidden opacity-5">
                 {[...Array(8)].map((_, i) => (

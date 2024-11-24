@@ -5,7 +5,7 @@ import { db } from '../firebase';
 
 const SCHOOLS = ['ΠΑΜΑΚ', 'ΑΠΘ', 'ΣΙΝΔΟ'];
 
-const RegistrationForm = () => {
+export const RegistrationForm = () => {
     const [status, setStatus] = useState('');
     const [category, setCategory] = useState('');
     const [customSchool, setCustomSchool] = useState('');
@@ -77,26 +77,25 @@ const RegistrationForm = () => {
             members: teamMembers.map(({ id, ...member }) => member),
             createdAt: serverTimestamp(),
             status: 'pending',
-            submittedAt: new Date().toISOString() // Adding a client-side timestamp for immediate access
+            submittedAt: new Date().toISOString()
         };
 
         try {
-            // Save to Firestore
-            const registrationsRef = collection(db, 'registrations');
+            if (!db) {
+                throw new Error('Firebase is not initialized');
+            }
+
+            const registrationsRef = collection(db, 'participants');
             const docRef = await addDoc(registrationsRef, formData);
 
             console.log('Registration submitted successfully with ID:', docRef.id);
 
-            // Clear form
             setStatus('success');
             e.target.reset();
             setTeamMembers([]);
             setCategory('');
             setCurrentMember({ name: '', email: '', school: '' });
             setCustomSchool('');
-
-            // You could store the registration ID for future reference
-            localStorage.setItem('lastRegistrationId', docRef.id);
 
         } catch (error) {
             console.error('Error submitting registration:', error);
@@ -108,6 +107,7 @@ const RegistrationForm = () => {
         }
     };
 
+
     return (
         <div className="min-h-screen bg-gray-900 py-16 px-4">
             <div className="max-w-4xl mx-auto">
@@ -118,7 +118,7 @@ const RegistrationForm = () => {
                     </div>
                     <h2 className="text-3xl font-bold text-gray-100 mb-4">
                         Ξεκίνα το ταξίδι σου στο
-                        <span className="block text-yellow-300 mt-2">Datathon 2024</span>
+                        <span className="block text-yellow-300 mt-2">Datathon UoM</span>
                     </h2>
                 </div>
 

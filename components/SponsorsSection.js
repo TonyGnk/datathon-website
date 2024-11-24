@@ -91,10 +91,9 @@ const SponsorsSection = () => {
             </div>
 
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
+                <div className="text-center mb-14">
                     <h2 className="font-mono text-4xl font-bold text-gray-100 mb-3">
-                        Οι<span className="mx-[10px] text-yellow-300">Υποστηρικτές</span>μας
-                    </h2>
+                        Οι<span className="mx-[10px] text-yellow-300">Υποστηρικτές</span>μας</h2>
 
                     <p className="text-xl text-gray-400 max-w-2xl mx-auto">
                         Ευχαριστούμε τους συνδιοργανωτές και χορηγούς μας που κάνουν το Datathon 2024 πραγματικότητα
