@@ -5,7 +5,7 @@ const AboutSection = () => {
     const features = [
         {
             icon: Code2,
-            title: "Καινοτομία2",
+            title: "Καινοτομία",
             desc: "Χρήση τεχνολογιών για την επίλυση προβλημάτων"
         },
         {
