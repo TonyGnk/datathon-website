@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100">
       <Head>
-        <title>Datathon 2024</title>
+        <title>Datathon UoM 2024</title>
         <meta name="description" content="Join our exciting datathon event!" />
       </Head>
 

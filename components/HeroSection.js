@@ -53,7 +53,7 @@ const HeroSection = () => {
     };
 
     return (
-        <div className="relative min-h-screen bg-gray-900 flex items-center">
+        <div className="relative min-h-screen bg-gray-900 flex items-center mt-1">
             {/* Position the background with a lower z-index */}
             <div className="absolute inset-0 z-0">
                 <AnimatedNetworkBackground />
@@ -91,21 +91,28 @@ const HeroSection = () => {
                         </div>
 
                         <div className="space-x-4 relative">
-                            <button
+                            {/* <button
                                 onClick={scrollToRegister}
                                 className="inline-flex items-center px-8 py-4 bg-blue-900 text-yellow-300 rounded-lg font-medium text-lg shadow-lg transition-all duration-300 hover:bg-blue-800 hover:shadow-xl hover:scale-105 border border-blue-800 hover:border-yellow-300"
                             >
                                 Δήλωσε Συμμετοχή
                                 <ArrowRight className="ml-2 w-5 h-5" />
+                            </button> */}
+                            <button
+                                onClick={scrollToNextSection}
+                                className="inline-flex items-center px-8 py-4 bg-blue-900 text-yellow-300 rounded-lg font-medium text-lg shadow-lg transition-all duration-300 hover:bg-blue-800 hover:shadow-xl hover:scale-105 border border-blue-800 hover:border-yellow-300"
+                            >
+                                Δήλωσε Συμμετοχή
+                                <ChevronDown className="ml-2 w-5 h-5 animate-bounce" />
                             </button>
 
-                            <button
+                            {/* <button
                                 onClick={scrollToNextSection}
                                 className="inline-flex items-center px-8 py-4 bg-gray-800/50 text-gray-300 rounded-lg font-medium text-lg shadow-lg transition-all duration-300 hover:bg-gray-700/50 hover:shadow-xl hover:scale-105 border border-gray-700 hover:border-yellow-300"
                             >
                                 Μάθετε Περισσότερα
                                 <ChevronDown className="ml-2 w-5 h-5 animate-bounce" />
-                            </button>
+                            </button> */}
                         </div>
                     </div>
                 </div>
