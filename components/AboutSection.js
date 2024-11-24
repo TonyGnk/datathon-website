@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code2, Users2, Rocket, Database, Users, Clock, Sparkles, ArrowRight, Code, Brain } from 'lucide-react';
+import { Code2, Users2, Rocket, Database, Users, Building2Icon, Clock, Sparkles, ArrowRight, Code, Brain } from 'lucide-react';
 
 const AboutSection = () => {
     const features = [
@@ -40,7 +40,7 @@ const AboutSection = () => {
                 <div className="mt-16 relative group">
                     <div className="absolute -inset-1 bg-gradient-to-r from-yellow-300 to-blue-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-300" />
                     <div className="relative p-8 bg-gray-900 rounded-xl leading-none">
-                        <div className="grid md:grid-cols-[2fr,1fr] gap-8 items-center">
+                        <div className="grid md:grid-cols-[4fr,1fr] gap-8 items-center">
                             <p className="text-gray-300 leading-relaxed">
                                 Φοιτητές οργανώνονται σε ομάδες και συνεργάζονται για μια ημέρα, αξιοποιώντας τις παρεχόμενες
                                 πύλες ανοιχτών δεδομένων με στόχο να λύσουν συγκεκριμένα προβλήματα ή να δημιουργήσουν προβλέψεις.
@@ -54,11 +54,11 @@ const AboutSection = () => {
                                 </div>
                                 <div className="flex items-center space-x-3 text-gray-300">
                                     <Users className="w-5 h-5 text-yellow-300" />
-                                    <span>Ομάδες 1-4 ατόμων</span>
+                                    <span>1-4 Άτόμα</span>
                                 </div>
                                 <div className="flex items-center space-x-3 text-gray-300">
-                                    <Sparkles className="w-5 h-5 text-yellow-300" />
-                                    <span>Σημαντικά Έπαθλα</span>
+                                    <Building2Icon className="w-5 h-5 text-yellow-300" />
+                                    <span>ΠαΜακ, Αμφ 13</span>
                                 </div>
                             </div>
                         </div>
