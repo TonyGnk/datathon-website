@@ -31,7 +31,7 @@ export const RegistrationForm = () => {
     const validateEmail = (email) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            return 'Παρακαλώ εισάγετε ένα έγκυρο email';
+            return 'Παρακαλώ εισήγαγε ένα έγκυρο email';
         }
         return '';
     };
@@ -146,7 +146,7 @@ export const RegistrationForm = () => {
                                     name="teamName"
                                     required
                                     className="w-full px-4 py-3 rounded-lg bg-gray-900/50 border border-gray-700 text-gray-100"
-                                    placeholder="Εισάγετε το όνομα της ομάδας σας"
+                                    placeholder="Εισήγαγε το όνομα της ομάδας σας"
                                 />
                             </div>
 
