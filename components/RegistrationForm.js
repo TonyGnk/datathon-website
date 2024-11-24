@@ -324,7 +324,7 @@ export const RegistrationForm = () => {
 
                                         </div>
                                         <span className="text-gray-300 group-hover:text-yellow-300 transition-colors duration-200">
-                                            Ένωση με άλλη ομάδα
+                                            Συγχώνευση με άλλη ομάδα
                                         </span>
                                     </label>
                                 )}
