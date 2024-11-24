@@ -19,7 +19,7 @@ const SponsorCard = ({ name, description, logo, link, tier }) => {
                     onClick={() => window.open(link, '_blank')}
                 >
                     <ExternalLink className="w-4 h-4 mr-1" />
-                    <span className="cursor-pointer" onClick={() => window.open(link, '_blank')}>Επισκεφθείτε την ιστοσελίδα</span>
+                    <span className="cursor-pointer" onClick={() => window.open(link, '_blank')}>Επισκέψου την ιστοσελίδα</span>
                 </div>
             </div>
         </div>

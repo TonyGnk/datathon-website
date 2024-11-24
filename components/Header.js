@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, Clipboard } from 'lucide-react';
+import { Menu, Clipboard, Facebook, Instagram } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -167,8 +167,26 @@ export const Header = () => {
                             target="_blank"
                             className="block w-full text-left px-4 py-2 text-gray-300 hover:bg-gray-800/50 hover:text-yellow-300"
                         >
-                            Αρχείο 2023
+                            Ιστοσελίδα 2023
                         </Link>
+
+                        {/* Social Media Icons */}
+                        <div className="flex gap-4 px-4 pt-2">
+                            <Link
+                                href="https://instagram.com/your-handle"
+                                target="_blank"
+                                className="text-gray-300 hover:text-yellow-300 transition-colors duration-200"
+                            >
+                                <Instagram size={24} />
+                            </Link>
+                            <Link
+                                href="https://facebook.com/your-page"
+                                target="_blank"
+                                className="text-gray-300 hover:text-yellow-300 transition-colors duration-200"
+                            >
+                                <Facebook size={24} />
+                            </Link>
+                        </div>
                     </div>
                 </div>
             )}

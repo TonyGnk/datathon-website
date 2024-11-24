@@ -1,3 +1,6 @@
+import { Facebook, Instagram } from 'lucide-react';
+import Link from 'next/link';
+
 const Footer = () => {
     return (
         <footer className="bg-gray-900 text-gray-400 py-6">
@@ -13,6 +16,22 @@ const Footer = () => {
                     >
                         Δήλωση Προστασίας Προσωπικών Δεδομένων
                     </a>
+                    <div className="flex gap-4 px-4 pt-2">
+                        <Link
+                            href="https://instagram.com/your-handle"
+                            target="_blank"
+                            className="text-gray-300 hover:text-yellow-300 transition-colors duration-200"
+                        >
+                            <Instagram size={24} />
+                        </Link>
+                        <Link
+                            href="https://facebook.com/your-page"
+                            target="_blank"
+                            className="text-gray-300 hover:text-yellow-300 transition-colors duration-200"
+                        >
+                            <Facebook size={24} />
+                        </Link>
+                    </div>
                 </div>
             </div>
         </footer>

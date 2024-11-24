@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import {
-    Clock,
     UserCheck,
     Presentation,
     Users,
@@ -42,7 +41,7 @@ const TimelineItem = ({ time, title, icon: Icon, isLeft }) => {
                 }`}
         >
             <div className={`flex-1 ${isLeft ? 'text-right' : ''}`}>
-                <div className="bg-white p-4 rounded-lg shadow-lg border-2 border-gray-400 hover:border-blue-800 transition-colors duration-300">
+                <div className="bg-white p-2 rounded-lg shadow-lg border-2 border-gray-400 hover:border-blue-800 transition-colors duration-300">
                     <p className="text-gray-700 font-bold mb-1">{time}</p>
                     <p className="text-gray-700">{title}</p>
                 </div>
@@ -61,7 +60,7 @@ const TimelineItem = ({ time, title, icon: Icon, isLeft }) => {
 const Timeline = () => {
     const timelineData = [
         { time: "10:00. – 10:30", title: "Εγγραφές", icon: UserCheck },
-        { time: "10:30 – 11:00", title: "Σύντομη παρουσίαση event", icon: Presentation },
+        { time: "10:30 – 11:00", title: "Σύντομη παρουσίαση", icon: Presentation },
         { time: "11:00 – 14:00", title: "Εργασία ομάδων", icon: Users },
         { time: "14:00 – 14:45", title: "Break – Light lunch", icon: Coffee },
         { time: "14:45 – 15:00", title: "Εργασία ομάδων", icon: Target },
@@ -71,21 +70,28 @@ const Timeline = () => {
     ];
 
     return (
-        <div className="bg-[#D6BE3C]">
-            <div className="max-w-4xl mx-auto py-0 px-4 ">
-                <div className="relative">
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-gray-900" />
-                    <div className="relative z-10 py-10">
-                        {timelineData.map((item, index) => (
-                            <TimelineItem
-                                key={index}
-                                {...item}
-                                isLeft={index % 2 === 0}
-                            />
-                        ))}
+        <div className="relative pt-12 bg-gray-900">
+            <div className="text-center mb-12">
+                <h2 className="font-mono text-4xl font-bold text-yellow-300">
+                    Πρόγραμμα
+                </h2>
+            </div>
+            <div className="bg-[#BDA835]">
+                <div className="max-w-4xl mx-auto py-0 px-4 ">
+                    <div className="relative">
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1 h-full bg-gray-900" />
+                        <div className="relative z-10 py-10">
+                            {timelineData.map((item, index) => (
+                                <TimelineItem
+                                    key={index}
+                                    {...item}
+                                    isLeft={index % 2 === 0}
+                                />
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
+            </div >
         </div >
     );
 };

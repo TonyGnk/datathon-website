@@ -92,7 +92,7 @@ const HeroSection = () => {
                                 onClick={scrollToNextSection}
                                 className="inline-flex items-center justify-center px-8 py-4 bg-blue-900 text-yellow-300 rounded-lg font-medium text-lg shadow-lg transition-all duration-300 hover:bg-blue-800 hover:shadow-xl hover:scale-105 border border-blue-800 hover:border-yellow-300"
                             >
-                                Μάθετε περισσότερα
+                                Μάθε περισσότερα
                                 <ChevronDown className="mt-1 ml-2 w-5 h-5 animate-bounce" />
                             </button>
                         </div>
