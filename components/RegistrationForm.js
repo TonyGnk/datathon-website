@@ -146,7 +146,7 @@ export const RegistrationForm = () => {
                                     <button
                                         type="button"
                                         onClick={() => setCategory('development')}
-                                        className={`flex items-center justify-center gap-2 px-4 py-3 rounded-lg border ${category === 'development'
+                                        className={`flex items-center justify-center gap-2 px-4 py-3 rounded-lg border transform active:scale-90 transition-transform duration-200 ${category === 'development'
                                             ? 'bg-blue-900 text-yellow-300 border-yellow-300'
                                             : 'border-gray-700 text-gray-300'
                                             }`}
@@ -157,7 +157,7 @@ export const RegistrationForm = () => {
                                     <button
                                         type="button"
                                         onClick={() => setCategory('innovation')}
-                                        className={`flex items-center justify-center gap-2 px-4 py-3 rounded-lg border ${category === 'innovation'
+                                        className={`flex items-center justify-center gap-2 px-4 py-3 rounded-lg border transform active:scale-90 transition-transform duration-200 ${category === 'innovation'
                                             ? 'bg-blue-900 text-yellow-300 border-yellow-300'
                                             : 'border-gray-700 text-gray-300'
                                             }`}
@@ -165,6 +165,7 @@ export const RegistrationForm = () => {
                                         <Lightbulb className="w-5 h-5" />
                                         Καινοτόμος Ιδέα
                                     </button>
+
                                 </div>
                             </div>
                         </div>

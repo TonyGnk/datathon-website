@@ -28,6 +28,9 @@ export default function Home() {
         <SponsorsSection />
         <RegistrationForm />
         <FaqSection />
+        <a href="/privacy_policy" className="text-gray-700 hover:text-blue-500">
+          Προσωπικά Δεδομένα
+        </a>
       </main>
     </div>
   );
