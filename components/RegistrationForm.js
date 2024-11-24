@@ -3,6 +3,7 @@ import { PlusCircle, Users, Trash2, Send, Code, Lightbulb, Clipboard, AlertCircl
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { db } from '../firebase';
 
+
 const SCHOOLS = [
     'Πανεπιστήμιο Μακεδονίας', 'Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης', 'Διεθνές Πανεπιστήμιο'
 ];
@@ -90,41 +91,42 @@ export const RegistrationForm = () => {
         };
 
         try {
+            // First, save to Firebase
             if (!db) {
                 throw new Error('Firebase is not initialized');
             }
 
-            try {
-                const registrationsRef = collection(db, 'participants');
-                const docRef = await addDoc(registrationsRef, formData);
+            const registrationsRef = collection(db, 'participants');
+            const docRef = await addDoc(registrationsRef, {
+                ...formData,
+                createdAt: serverTimestamp(),
+            });
 
-                // Send emails
-                const emailResult = await sendRegistrationEmail(formData);
-                if (!emailResult.success) {
-                    console.error('Error sending confirmation emails:', emailResult.error);
-                }
+            // Then, send emails
+            const emailResponse = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
 
-                setStatus('success');
-                // ... rest of your success handling
-            } catch (error) {
-                console.error('Error:', error);
-                setStatus('error');
-                // ... rest of your error handling
+            if (!emailResponse.ok) {
+                const errorData = await emailResponse.json();
+                throw new Error(errorData.details || 'Failed to send confirmation emails');
             }
-
-            console.log('Registration submitted successfully with ID:', docRef.id);
 
             setStatus('success');
             e.target.reset();
             setTeamMembers([]);
             setCategory('');
-            setCurrentMember({ name: '', email: '', school: '' });
+            setCurrentMember({ name: '', email: '', school: '', subject: '' });
             setCustomSchool('');
             setCustomSubject('');
             setAutoTeam(false);
 
         } catch (error) {
-            console.error('Error submitting registration:', error);
+            console.error('Error:', error);
             setStatus('error');
             setSubmissionError(
                 'Παρουσιάστηκε σφάλμα κατά την υποβολή. Παρακαλώ προσπαθήστε ξανά. ' +
@@ -215,7 +217,7 @@ export const RegistrationForm = () => {
                                     <div className="flex-1">
                                         <p className="font-medium text-gray-100">{member.name}</p>
                                         <p className="text-sm text-gray-400">{member.email}</p>
-                                        <p className="text-sm text-yellow-300">{member.school}</p>
+                                        <p className="text-sm text-yellow-300">{member.school} - {member.subject}</p>
                                     </div>
                                     <button
                                         type="button"
