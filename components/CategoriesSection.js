@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Lightbulb, ChevronRight, Users, Clock, Award } from 'lucide-react';
+import { Code, Lightbulb, ChevronRight, Users, ChevronDown, Clock, Award } from 'lucide-react';
 
 const CategoryCard = ({ title, description, skills, icon: Icon, gradient, requirements }) => {
     return (
@@ -67,6 +67,10 @@ const CategoryCard = ({ title, description, skills, icon: Icon, gradient, requir
 };
 
 const CategoriesSection = () => {
+    const scrollToNextSection = () => {
+        document.getElementById('whatIsDatathon')?.scrollIntoView({ behavior: 'smooth' });
+    };
+
     const categories = [
         {
             title: "Ανάπτυξη Πρωτότυπης Εφαρμογής",
@@ -97,7 +101,7 @@ const CategoriesSection = () => {
     ];
 
     return (
-        <section id="categories" className="py-16 bg-gray-900">
+        <section id="categories" className="py-0 bg-gray-900 pb-6">
             {/* Network lines background for section */}
             <div className="absolute inset-0 overflow-hidden opacity-5">
                 {[...Array(20)].map((_, i) => (
@@ -117,7 +121,8 @@ const CategoriesSection = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
                     <h2 className="font-mono text-3xl font-bold text-gray-100 mb-4">
-                        Κατηγορίες Συμμετοχής
+                        Κατηγορίες
+                        <span className="-mx-[10px] text-yellow-300"> Συμμετοχής </span>
                     </h2>
                     <p className="text-lg text-gray-300 max-w-2xl mx-auto">
                         Επίλεξε την κατηγορία που ταιριάζει καλύτερα στις δεξιότητες και τα ενδιαφέροντά σου
