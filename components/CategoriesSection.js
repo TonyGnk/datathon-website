@@ -120,10 +120,6 @@ const CategoriesSection = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
-                    {/* <h2 className="font-mono text-3xl font-bold text-gray-100 mb-4">
-                        Κατηγορίες
-                        <span className="text-yellow-300"> Συμμετοχής </span>
-                    </h2> */}
                     <h2 className="font-mono text-3xl font-bold text-gray-100 mb-4 text-center flex flex-wrap justify-center gap-x-2">
                         <span>Κατηγορίες</span>
                         <span className="text-yellow-300">Συμμετοχής</span>
