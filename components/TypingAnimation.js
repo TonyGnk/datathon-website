@@ -7,6 +7,7 @@ const phrases = [
     'των ανοικτών δεδομένων',
     'του μέλλοντος',
     'των API',
+    'της καινοτομίας',
 ];
 
 const TypingAnimation = () => {
@@ -59,8 +60,8 @@ const TypingAnimation = () => {
             {text.trim().split(' ').map((word, index) => (
                 <span key={index} className="text-yellow-300">{word}{' '}</span>
             ))}
-            <span className="animate-pulse text-yellow-200">|</span>
-            {/* <span className="text-yellow-300">{text}</span> */}
+            {/* Add a negative margin to the left */}
+            <span className="animate-pulse text-yellow-200 -ml-5">|</span>
         </h2>
     );
 };

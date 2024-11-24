@@ -30,8 +30,8 @@ const AboutSection = () => {
             <div id='whatIsDatathon' className="absolute inset-0 bg-[linear-gradient(rgba(25,25,25,1)_2px,transparent_2px),linear-gradient(90deg,rgba(25,25,25,1)_2px,transparent_2px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_70%,transparent_100%)] opacity-30" />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-                <div className="text-center mb-16 relative">
-                    <h2 className="font-mono text-4xl font-bold text-gray-100 mb-4 text-center flex flex-wrap justify-center gap-x-2  text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-400">
+                <div className="text-center mb-14 relative">
+                    <h2 className="font-mono text-4xl font-bold text-gray-100 mb-12 text-center flex flex-wrap justify-center gap-x-2  text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-400">
                         <span>Τι</span>
                         <span>είναι</span>
                         <span>το</span>
@@ -39,6 +39,33 @@ const AboutSection = () => {
                         <span>@UoM;</span>
                     </h2>
                 </div>
+
+                <div className="relative max-w-3xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center justify-center">
+                        {/* First Image */}
+                        <div className="w-full max-w-xs mx-auto aspect-video flex items-center justify-center">
+                            <img
+                                src="logo2.png"
+                                alt="Datathon Participants"
+                                className="w-full h-auto object-contain"
+                            />
+                        </div>
+
+                        {/* Second Image */}
+                        <div className="w-full max-w-xs mx-auto aspect-video flex items-center justify-center">
+                            <img
+                                src="UOMLOGOGR.png"
+                                alt="Datathon Event"
+                                className="w-full h-auto object-contain"
+                            />
+                        </div>
+                    </div>
+
+                    {/* Centered divider line - Only visible on desktop */}
+                    <div className="hidden md:block absolute top-1/2 left-1/2 h-full w-px bg-white/20 transform -translate-x-1/2 -translate-y-1/2" />
+                </div>
+
+
 
 
                 <div className="mt-16 relative group">
