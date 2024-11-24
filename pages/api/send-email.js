@@ -383,17 +383,17 @@ export default async function handler(req, res) {
         };
 
         // Try sending a test email first
-        try {
-            await sendEmailWithErrorHandling(testMsg);
-            console.log('Test email sent successfully');
-        } catch (error) {
-            console.error('Test email failed:', error);
-            return res.status(500).json({
-                success: false,
-                error: 'SendGrid configuration test failed',
-                details: error.message
-            });
-        }
+        // try {
+        //     await sendEmailWithErrorHandling(testMsg);
+        //     console.log('Test email sent successfully');
+        // } catch (error) {
+        //     console.error('Test email failed:', error);
+        //     return res.status(500).json({
+        //         success: false,
+        //         error: 'SendGrid configuration test failed',
+        //         details: error.message
+        //     });
+        // }
 
         // If test passes, proceed with actual emails
         const emailPromises = [];

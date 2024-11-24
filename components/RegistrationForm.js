@@ -273,7 +273,7 @@ export const RegistrationForm = () => {
                                     <select
                                         value={currentMember.school}
                                         onChange={(e) => setCurrentMember({ ...currentMember, school: e.target.value })}
-                                        className="px-4 py-3 rounded-lg bg-gray-900/50 border border-gray-700 text-gray-100"
+                                        className="px-4 pr-8 py-3 rounded-lg bg-gray-900/50 border border-gray-700 text-gray-100 appearance-none"
                                     >
                                         <option value="">Επίλεξε Σχολή</option>
                                         {SCHOOLS.map(school => (
@@ -296,7 +296,7 @@ export const RegistrationForm = () => {
                                     <select
                                         value={currentMember.subject}
                                         onChange={(e) => setCurrentMember({ ...currentMember, subject: e.target.value })}
-                                        className="px-4 py-3 rounded-lg bg-gray-900/50 border border-gray-700 text-gray-100"
+                                        className="px-4 pr-8 py-3 rounded-lg bg-gray-900/50 border border-gray-700 text-gray-100 appearance-none"
                                     >
                                         <option value="">Επίλεξε Αντικείμενο Σπουδών</option>
                                         {SCHOOL_SUBJECT.map(school => (
