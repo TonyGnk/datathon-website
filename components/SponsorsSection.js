@@ -39,6 +39,13 @@ const SponsorsSection = () => {
             description: "Funded by EU's Horizon Europe, AI4Deliberation integrates AI into citizen deliberation processes to address challenges in modern democracies.",
             logo: "/ai-logo.jpg",
             link: ""
+        },
+        {
+            name: "digiGOV-innoHUB",
+            description: "O GR digiGOV-innoHUB προσφέρει λύσεις για την αναβάθμιση των δημόσιων υπηρεσιών, αξιοποιώντας τις δυνατότητες των νέων τεχνολογιών.",
+            logo: "/digiGov-logo.png",
+            link: "https://digigov.innohub.gr/"
+
         }
     ];
 
@@ -108,7 +115,7 @@ const SponsorsSection = () => {
                                 Συνδιοργανωτές
                             </span>
                         </h3>
-                        <div className="grid md:grid-cols-2 gap-8">
+                        <div className="grid md:grid-cols-3 gap-8">
                             {coOrganizers.map((sponsor, index) => (
                                 <SponsorCard key={index} {...sponsor} tier="co-organizer" />
                             ))}

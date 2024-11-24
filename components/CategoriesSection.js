@@ -80,7 +80,6 @@ const CategoriesSection = () => {
             gradient: "bg-gradient-to-r from-blue-900 to-blue-800",
             requirements: [
                 "Λειτουργικό πρωτότυπο",
-                "Τεχνική τεκμηρίωση",
                 "Live demo",
                 "Source code"
             ]
@@ -92,7 +91,6 @@ const CategoriesSection = () => {
             icon: Lightbulb,
             gradient: "bg-gradient-to-r from-blue-800 to-blue-900",
             requirements: [
-                "Αναλυτική παρουσίαση",
                 "Mock-ups / Wireframes",
                 "Business case",
                 "Implementation plan"
