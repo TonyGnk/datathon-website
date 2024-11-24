@@ -84,7 +84,7 @@ const SponsorsSection = () => {
             <div className="absolute inset-0 overflow-hidden opacity-5">
                 <div className="absolute inset-0"
                     style={{
-                        backgroundImage: 'radial-gradient(#FFD60A 1px, transparent 1px)',
+                        backgroundImage: 'radial-gradient(#FFD60A 3px, #111827 4px)',
                         backgroundSize: '24px 24px'
                     }}
                 />

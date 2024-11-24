@@ -3,22 +3,16 @@ import { Trophy, Cloud, Rocket, ArrowRight } from 'lucide-react';
 
 const PrizesSection = () => {
     return (
+        //Make this color background #FDE047
         <section className="relative py-20 bg-gray-900">
             {/* Abstract geometric background */}
-            <div id="prizes" className="absolute inset-0 overflow-hidden opacity-5">
-                {[...Array(8)].map((_, i) => (
-                    <div key={i} className="absolute">
-                        {/* Hexagonal grid pattern */}
-                        <div
-                            className="absolute w-96 h-96 border border-yellow-300 rotate-45 transform"
-                            style={{
-                                top: `${i * 15}%`,
-                                left: `${(i % 2) * 40}%`,
-                                clipPath: 'polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)'
-                            }}
-                        />
-                    </div>
-                ))}
+            <div className="absolute inset-0 overflow-hidden opacity-5">
+                <div className="absolute inset-0"
+                    style={{
+                        backgroundImage: 'radial-gradient(#FFD60A 3px, #111827 4px)',
+                        backgroundSize: '24px 24px'
+                    }}
+                />
             </div>
 
             <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,7 +25,7 @@ const PrizesSection = () => {
                     </p>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-8 mb-16">
+                <div className="grid lg:grid-cols-2 gap-8 mb-1">
                     {/* Prize Cards */}
                     <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-900 to-blue-800 p-px transition-all duration-300 hover:scale-105 hover:shadow-xl">
                         <div className="relative h-full rounded-xl bg-gray-900/50 backdrop-blur-sm p-8 border border-blue-800">
@@ -76,6 +70,8 @@ const PrizesSection = () => {
                     </div>
                 </div>
             </div>
+            {/* Add an extra space */}
+            <div className="h-13"></div>
         </section>
     );
 };

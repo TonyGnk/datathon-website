@@ -49,7 +49,7 @@ const CategoryCard = ({ title, description, skills, icon: Icon, gradient, requir
 
                     <div>
                         <h4 className="text-sm font-mono font-semibold uppercase tracking-wider text-gray-400 mb-2">
-                            Τι περιλαμβάνει
+                            Τι περιλαμβανει
                         </h4>
                         <ul className="space-y-2">
                             {requirements.map((req, index) => (
@@ -69,9 +69,9 @@ const CategoryCard = ({ title, description, skills, icon: Icon, gradient, requir
 const CategoriesSection = () => {
     const categories = [
         {
-            title: "Κατηγορία 1: Ανάπτυξη Πρωτότυπης Εφαρμογής",
+            title: "Ανάπτυξη Πρωτότυπης Εφαρμογής",
             description: "Στην κατηγορία αυτή, οι ομάδες θα αναπτύξουν μια ολοκληρωμένη εφαρμογή αξιοποιώντας τα παρεχόμενα δεδομένα. Εστιάζουμε στην τεχνική υλοποίηση και την πρακτική εφαρμογή των ιδεών σας.",
-            skills: ["Python", "Data Analysis", "Web Development", "Machine Learning", "Data Visualization"],
+            skills: ["Python", "Java", "Web Development", "Problem Solving", "Data Visualization"],
             icon: Code,
             gradient: "bg-gradient-to-r from-blue-900 to-blue-800",
             requirements: [
@@ -82,9 +82,9 @@ const CategoriesSection = () => {
             ]
         },
         {
-            title: "Κατηγορία 2: Παρουσίαση Καινοτόμου Ιδέας",
-            description: "Αυτή η κατηγορία απευθύνεται σε ομάδες που θέλουν να παρουσιάσουν καινοτόμες ιδέες, εστιάζοντας στην επίλυση προβλημάτων και τη δημιουργία αξίας μέσω των δεδομένων.",
-            skills: ["Problem Solving", "Design Thinking", "Data Strategy", "Business Analysis", "UI/UX Design"],
+            title: "Εύρεση Καινοτόμας Ιδέας",
+            description: "Αυτή η κατηγορία απευθύνεται σε ομάδες που θέλουν να παρουσιάσουν καινοτόμες ιδέες, εστιάζοντας στην επίλυση προβλημάτων και τη δημιουργία αξίας μέσω των δεδομένων στον πραγματικό κόσμο.",
+            skills: ["Design Thinking", "Business Analysis", "UI/UX Design"],
             icon: Lightbulb,
             gradient: "bg-gradient-to-r from-blue-800 to-blue-900",
             requirements: [
