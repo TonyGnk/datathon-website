@@ -31,7 +31,7 @@ const AboutSection = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                 <div className="text-center mb-14 relative">
-                    <h2 className="font-mono text-4xl font-bold text-gray-100 mb-12 text-center flex flex-wrap justify-center gap-x-2  text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-400">
+                    <h2 className="font-mono text-4xl font-bold text-yellow-400 mb-12 text-center flex flex-wrap justify-center gap-x-2 ">
                         <span>Τι</span>
                         <span>είναι</span>
                         <span>το</span>

@@ -58,11 +58,11 @@ const TimelineItem = ({ time, title, icon: Icon, isLeft }) => {
 
 const Timeline = () => {
     const timelineData = [
-        { time: "10:00. – 10:30", title: "Εγγραφές", icon: UserCheck },
+        { time: "10:00 – 10:30", title: "Εγγραφές", icon: UserCheck },
         { time: "10:30 – 11:00", title: "Σύντομη παρουσίαση", icon: Presentation },
         { time: "11:00 – 14:00", title: "Εργασία ομάδων", icon: Users },
         { time: "14:00 – 14:45", title: "Break – Light lunch", icon: Coffee },
-        { time: "14:45 – 15:00", title: "Εργασία ομάδων", icon: Users },
+        { time: "14:45 – 17:00", title: "Εργασία ομάδων", icon: Users },
         { time: "17:00 – 18:00", title: "Παρουσίαση αποτελεσμάτων ομάδων", icon: Presentation },
         { time: "18:00 – 18:40", title: "Αξιολόγηση από επιτροπή", icon: Award },
         { time: "18:40 – 19:00", title: "Απονομή βραβείων", icon: Trophy }
