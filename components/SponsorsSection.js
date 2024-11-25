@@ -41,11 +41,16 @@ const SponsorsSection = () => {
             link: ""
         },
         {
+            name: "RAISE",
+            description: "Μια πρωτοβουλία που στοχεύει στη δημιουργία ενός αξιόπιστου και διαφανούς περιβάλλοντος για τη διαμοίραση και επεξεργασία δεδομένων μεταξύ ερευνητικών κοινοτήτων.",
+            logo: "/raise_transparent.png",
+            link: "https://raise-project.org/"
+        },
+        {
             name: "digiGOV-innoHUB",
             description: "O GR digiGOV-innoHUB προσφέρει λύσεις για την αναβάθμιση των δημόσιων υπηρεσιών, αξιοποιώντας τις δυνατότητες των νέων τεχνολογιών.",
             logo: "/digiGov-logo.png",
             link: "https://digigov.innohub.gr/"
-
         }
     ];
 
@@ -61,21 +66,18 @@ const SponsorsSection = () => {
             description: "Το κορυφαίο startup hub της Θεσσαλονίκης και καταλύτης για την ανάπτυξη του τοπικού οικοσυστήματος καινοτομίας.",
             logo: "/okthess-logo.jpg",
             link: "https://okthess.gr/"
-        }
-    ];
-
-    const supportSponsors = [
-        {
-            name: "Χούτος Catering",
-            description: "Catering υψηλής ποιότητας με έξι πολυχώρους στη Θεσσαλονίκη.",
-            logo: "/houtos-logo2.png",
-            link: "https://cateringhoutos.gr/"
         },
         {
             name: "Seven Loft",
             description: "Εξειδικευμένη εταιρεία στην κατασκευή & προώθηση ιστοσελίδων με Google Ads, SEO & Social.",
             logo: "/sevenloft-logo.jpg",
             link: "https://www.sevenloft.gr/"
+        },
+        {
+            name: "Χούτος Catering",
+            description: "Catering υψηλής ποιότητας με έξι πολυχώρους στη Θεσσαλονίκη.",
+            logo: "/houtos-logo2.png",
+            link: "https://cateringhoutos.gr/"
         },
         {
             name: "Φοιτητικό Φωτοτυπικό Εργαστήριο",
@@ -115,7 +117,7 @@ const SponsorsSection = () => {
                                 Συνδιοργανωτές
                             </span>
                         </h3>
-                        <div className="grid md:grid-cols-3 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                             {coOrganizers.map((sponsor, index) => (
                                 <SponsorCard key={index} {...sponsor} tier="co-organizer" />
                             ))}
@@ -129,24 +131,9 @@ const SponsorsSection = () => {
                                 Χορηγοί
                             </span>
                         </h3>
-                        <div className="grid md:grid-cols-2 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
                             {mainSponsors.map((sponsor, index) => (
                                 <SponsorCard key={index} {...sponsor} tier="main" />
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Support Sponsors */}
-                    <div>
-                        <h3 className="text-2xl font-semibold text-center mb-8 text-gray-100">
-                            <span className="inline-block border-b-2 border-yellow-300 pb-1">
-                                Υποστηρικτές
-                            </span>
-                        </h3>
-
-                        <div className="grid md:grid-cols-3 gap-6">
-                            {supportSponsors.map((sponsor, index) => (
-                                <SponsorCard key={index} {...sponsor} tier="support" />
                             ))}
                         </div>
                     </div>
@@ -157,3 +144,4 @@ const SponsorsSection = () => {
 };
 
 export default SponsorsSection;
+//grid grid-cols-1 md:grid-cols-2
