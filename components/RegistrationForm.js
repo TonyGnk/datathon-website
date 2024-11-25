@@ -89,7 +89,7 @@ export const RegistrationForm = () => {
             teamName: e.target.teamName.value,
             category,
             members: teamMembers.map(({ id, ...member }) => member),
-            autoTeam: teamMembers.length === 1 ? autoTeam : false
+            autoTeam: autoTeam
         };
 
         try {
