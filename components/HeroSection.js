@@ -70,11 +70,11 @@ const HeroSection = () => {
                     <div className="max-w-4xl mx-auto">
                         <TypingAnimation />
 
-                        <p className="text-xl text-gray-400 mb-12">
+                        <p className="text-xl text-gray-400 mb-9">
                             Μια μοναδική εμπειρία όπου η καινοτομία συναντά την τεχνολογία
                         </p>
 
-                        <div className="flex flex-col items-center justify-center bg-gray-900/50 backdrop-blur-sm rounded-2xl p-9 mb-10 shadow-lg border border-gray-700 hover:border-yellow-400 transition-all duration-300">
+                        <div className="flex flex-col items-center justify-center bg-gray-900/50 backdrop-blur-sm rounded-2xl p-7 mb-9 shadow-lg border border-gray-700 hover:border-yellow-400 transition-all duration-300">
                             <h2 className="text-gray-300 font-medium mb-6 flex items-center justify-center">
                                 <Clock className="w-5 h-5 mr-2 text-yellow-300" />
                                 Η αντίστροφη μέτρηση ξεκίνησε!
