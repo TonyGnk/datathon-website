@@ -66,17 +66,14 @@ const AboutSection = () => {
                 </div>
 
 
-
-
                 <div className="mt-16 relative group">
                     <div className="absolute -inset-1 bg-gradient-to-r from-yellow-300 to-blue-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-300" />
                     <div className="relative p-8 bg-gray-900 rounded-xl leading-none">
                         <div className="grid md:grid-cols-[4fr,1fr] gap-8 items-center">
                             <p className="text-gray-300 leading-relaxed">
                                 Φοιτητές οργανώνονται σε ομάδες και συνεργάζονται για μια ημέρα, αξιοποιώντας τις παρεχόμενες
-                                πύλες ανοικτών δεδομένων με στόχο να λύσουν συγκεκριμένα προβλήματα ή να δημιουργήσουν προβλέψεις.
-                                Ως αποτέλεσμα, αναπτύσσονται νέες ιδέες και εφαρμογές για τη βελτίωση υφιστάμενων ή τη δημιουργία
-                                εντελώς πρωτοφανών υπηρεσιών.
+                                πύλες ανοικτών δεδομένων με στόχο να λύσουν προβλήματα.
+                                Ως αποτέλεσμα, αναπτύσσονται νέες ιδέες και εφαρμογές για τη βελτίωση υφιστάμενων ή τη δημιουργία εντελώς πρωτοφανών υπηρεσιών.
                             </p>
                             <div className="space-y-4">
                                 <div className="flex items-center space-x-3 text-gray-300">
@@ -99,7 +96,7 @@ const AboutSection = () => {
             <div className="h-16"></div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {features.map((feature, index) => {
                         const Icon = feature.icon;
                         return (

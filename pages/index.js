@@ -25,11 +25,11 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <CategoriesSection />
-        <EvaluationCriteriaSection />
         <Timeline />
         <PrizesSection />
         <SponsorsSection />
         <RegistrationForm />
+        <EvaluationCriteriaSection />
         <FaqSection />
         <Footer />
       </main>

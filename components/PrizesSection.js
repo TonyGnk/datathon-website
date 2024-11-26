@@ -34,7 +34,7 @@ const PrizesSection = () => {
                             <h3 className="font-mono text-2xl font-bold mb-4 text-gray-100">Εφαρμογής</h3>
                             <div className="space-y-4">
                                 <div className="flex items-center text-lg">
-                                    <span className="font-bold text-3xl text-yellow-300 mr-2">1200€</span>
+                                    <span className="font-bold text-3xl text-yellow-300 mr-2">1000€</span>
                                     <span className="text-gray-300">για την 1η ομάδα</span>
                                 </div>
                                 <div className="pt-2">
@@ -47,19 +47,17 @@ const PrizesSection = () => {
                                     </span>
                                 </div>
                                 <div className="flex items-center text-lg">
-                                    <span className="font-bold text-2xl text-yellow-300 mr-2">600€</span>
+                                    <span className="font-bold text-2xl text-yellow-300 mr-2">700€</span>
                                     <span className="text-gray-300">για την 2η ομάδα</span>
                                 </div>
                                 <div className="flex items-center text-lg">
-                                    <span className="font-bold text-2xl text-yellow-300 mr-2">400€</span>
+                                    <span className="font-bold text-2xl text-yellow-300 mr-2">300€</span>
                                     <span className="text-gray-300">για την 3η ομάδα</span>
                                 </div>
                                 <p className="text-gray-400">σε υπηρεσίες cloud της LANCOM</p>
                             </div>
                         </div>
                     </div>
-                    {/* Ι: 1000 700 300
-Κ: 1200 600 400 */}
                     <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-900 to-blue-800 p-px transition-all duration-300 hover:scale-105 hover:shadow-xl">
                         <div className="relative h-full rounded-xl bg-gray-900/50 p-7 border border-blue-800">
                             <p className="text-gray-400">ΚΑΤΗΓΟΡΙΑ</p>

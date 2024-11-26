@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, Target, Code } from 'lucide-react';
+import { CheckCircle, Target, Code, AlertTriangle } from 'lucide-react';
 
 const EvaluationCriteriaSection = () => {
     const criteria = [
@@ -50,23 +50,38 @@ const EvaluationCriteriaSection = () => {
                             key={index}
                             className="group relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-900 to-blue-800 p-px transition-all duration-300 hover:scale-105 hover:shadow-xl"
                         >
-                            <div className="relative h-full rounded-xl bg-gray-900/50 p-7 border border-blue-800">
-                                <criterion.icon className="absolute top-6 right-6 w-12 h-12 text-yellow-300" />
-                                <h3 className="font-mono text-2xl font-bold mb-4 text-gray-100">
-                                    {criterion.title}
-                                </h3>
-                                <div className="flex items-center mb-4">
+                            <div className="relative h-full rounded-xl bg-gray-900/50 p-7 border border-blue-800 flex flex-col">
+                                <div className="flex justify-between items-start">
+                                    <h3 className="font-mono text-2xl font-bold text-gray-100 flex-1">
+                                        {criterion.title}
+                                    </h3>
+                                    <criterion.icon className="w-12 h-12 text-yellow-300 flex-shrink-0 ml-4" />
+                                </div>
+                                <div className="flex items-center mt-4 mb-4">
                                     <span className="font-bold text-3xl text-yellow-300 mr-2">
                                         {criterion.percentage}
                                     </span>
                                     <span className="text-gray-300">της συνολικής βαθμολογίας</span>
                                 </div>
-                                <p className="text-gray-400">
+                                <p className="text-gray-400 flex-1">
                                     {criterion.description}
                                 </p>
                             </div>
                         </div>
                     ))}
+                </div>
+
+
+                {/* Warning Section */}
+                <div className="mt-16 bg-red-800/30 border border-red-700 rounded-lg p-6 text-center">
+                    <AlertTriangle className="mx-auto w-12 h-12 text-red-400 mb-4" />
+                    <h3 className="text-2xl font-bold text-red-400 mb-2">
+                        Προειδοποίηση
+                    </h3>
+                    <p className="text-gray-300">
+                        Η χρήση κώδικα ή άλλων υλικών που έχουν αναπτυχθεί από το σπίτι είναι αποδεκτή,
+                        αλλά πρέπει να δηλωθεί ρητά. Οποιαδήποτε απόκρυψη μπορεί να θεωρηθεί ως απόπειρα εξαπάτησης.
+                    </p>
                 </div>
             </div>
         </section>
