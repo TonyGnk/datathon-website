@@ -6,11 +6,6 @@ const PrizesSection = () => {
     return (
         //Make this color background #FDE047
         <section id='prizes' className="relative py-20 bg-gray-900">
-            {/* Abstract geometric background */}
-            {/* <div className="absolute inset-0 z-0">
-                <AnimatedNetworkBackground2 />
-            </div> */}
-
             <div className="absolute inset-0 overflow-hidden opacity-5">
                 <div className="absolute inset-0"
                     style={{

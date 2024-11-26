@@ -46,20 +46,6 @@ const CategoryCard = ({ title, description, skills, icon: Icon, gradient, requir
                             ))}
                         </div>
                     </div>
-
-                    <div>
-                        <h4 className="text-sm font-mono font-semibold uppercase tracking-wider text-gray-400 mb-2">
-                            Τι περιλαμβανει
-                        </h4>
-                        <ul className="space-y-2">
-                            {requirements.map((req, index) => (
-                                <li key={index} className="flex items-center text-gray-300">
-                                    <ChevronRight className="w-4 h-4 text-yellow-300 mr-2" />
-                                    {req}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>

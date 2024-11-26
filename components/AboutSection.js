@@ -89,7 +89,7 @@ const AboutSection = () => {
                                 </div>
                                 <div className="flex items-center space-x-3 text-gray-300">
                                     <Building2Icon className="w-5 h-5 text-yellow-300" />
-                                    <span>ΠαΜακ, Αμφ 13</span>
+                                    <span>ΠαΜακ, Αμφ 13 & Εργαστήρια</span>
                                 </div>
                             </div>
                         </div>

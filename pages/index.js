@@ -9,6 +9,7 @@ import Timeline from '../components/Timeline';
 import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import Footer from '@/components/Footer';
+import EvaluationCriteriaSection from '@/components/EvaluationCriteriaSection';
 
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <CategoriesSection />
+        <EvaluationCriteriaSection />
         <Timeline />
         <PrizesSection />
         <SponsorsSection />
