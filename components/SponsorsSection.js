@@ -44,7 +44,7 @@ const SponsorsSection = () => {
             name: "RAISE",
             description: "Μια πρωτοβουλία που στοχεύει στη δημιουργία ενός αξιόπιστου και διαφανούς περιβάλλοντος για τη διαμοίραση και επεξεργασία δεδομένων μεταξύ ερευνητικών κοινοτήτων.",
             logo: "/raise_transparent.png",
-            link: "https://raise-project.org/"
+            link: "https://raise-science.eu/the-project/"
         },
         {
             name: "digiGOV-innoHUB",
