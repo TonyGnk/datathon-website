@@ -54,7 +54,7 @@ const AboutSection = () => {
                         {/* Second Image */}
                         <div className="w-full max-w-xs mx-auto aspect-video flex items-center justify-center">
                             <img
-                                src="UOMLOGOGR.png"
+                                src="UOMLOGOGR1.svg"
                                 alt="Datathon Event"
                                 className="w-full h-auto object-contain"
                             />
