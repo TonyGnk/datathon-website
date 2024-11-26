@@ -29,38 +29,42 @@ const SponsorCard = ({ name, description, logo, link, tier }) => {
 const SponsorsSection = () => {
     const coOrganizers = [
         {
-            name: "ΕΕΛΛΑΚ",
-            description: "Ο Οργανισμός Ανοικτών Τεχνολογιών (ΕΕΛ/ΛΑΚ) είναι μία αστική μη κερδοσκοπική εταιρεία με 37 Πανεπιστήμια και Ερευνητικά Κέντρα ως μετόχους.",
-            logo: "/eellak-logo.png",
-            link: "https://ellak.gr/"
-        },
-        {
-            name: "AI4DELIBERATION",
-            description: "Funded by EU's Horizon Europe, AI4Deliberation integrates AI into citizen deliberation processes to address challenges in modern democracies.",
-            logo: "/ai-logo.jpg",
-            link: ""
-        },
-        {
             name: "RAISE",
             description: "Μια πρωτοβουλία που στοχεύει στη δημιουργία ενός αξιόπιστου και διαφανούς περιβάλλοντος για τη διαμοίραση και επεξεργασία δεδομένων μεταξύ ερευνητικών κοινοτήτων.",
             logo: "/raise_transparent.png",
             link: "https://raise-science.eu/the-project/"
         },
         {
+            name: "ΕΕΛΛΑΚ",
+            description: "Ο Οργανισμός Ανοικτών Τεχνολογιών (ΕΕΛ/ΛΑΚ) είναι μία αστική μη κερδοσκοπική εταιρεία με 37 Πανεπιστήμια και Ερευνητικά Κέντρα ως μετόχους.",
+            logo: "/eellak-logo.png",
+            link: "https://ellak.gr/"
+        },
+        {
             name: "digiGOV-innoHUB",
             description: "O GR digiGOV-innoHUB προσφέρει λύσεις για την αναβάθμιση των δημόσιων υπηρεσιών, αξιοποιώντας τις δυνατότητες των νέων τεχνολογιών.",
             logo: "/digiGov-logo.png",
             link: "https://digigov.innohub.gr/"
+        },
+        {
+            name: "AI4DELIBERATION",
+            description: "Funded by EU's Horizon Europe, AI4Deliberation integrates AI into citizen deliberation processes to address challenges in modern democracies.",
+            logo: "/ai-logo.jpg",
+            link: ""
         }
     ];
 
-    const mainSponsors = [
+    const goldSponsors = [
         {
             name: "Lancom",
             description: "Αμιγώς ελληνική εταιρεία στο πεδίο των IT υπηρεσιών data center, με τρία Enterprise cloud data centers σε Αθήνα και Θεσσαλονίκη.",
             logo: "/lancom-logo.jpg",
             link: "https://www.lancom.gr/"
         },
+    ]
+
+    const mainSponsors = [
+
         {
             name: "OK!Thess",
             description: "Το κορυφαίο startup hub της Θεσσαλονίκης και καταλύτης για την ανάπτυξη του τοπικού οικοσυστήματος καινοτομίας.",
@@ -124,6 +128,20 @@ const SponsorsSection = () => {
                         </div>
                     </div>
 
+                    {/* Gold Sponsors */}
+                    <div>
+                        <h3 className="text-2xl font-semibold text-center mb-8 text-gray-100">
+                            <span className="inline-block border-b-2 border-yellow-300 pb-1">
+                                Χρυσοί Χορηγοί
+                            </span>
+                        </h3>
+                        <div className="max-w-2xl mx-auto grid grid-cols-1 md:grid-cols-1 gap-8">
+                            {goldSponsors.map((sponsor, index) => (
+                                <SponsorCard key={index} {...sponsor} tier="main" />
+                            ))}
+                        </div>
+                    </div>
+
                     {/* Main Sponsors */}
                     <div>
                         <h3 className="text-2xl font-semibold text-center mb-8 text-gray-100">
@@ -131,7 +149,7 @@ const SponsorsSection = () => {
                                 Χορηγοί
                             </span>
                         </h3>
-                        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+                        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                             {mainSponsors.map((sponsor, index) => (
                                 <SponsorCard key={index} {...sponsor} tier="main" />
                             ))}
