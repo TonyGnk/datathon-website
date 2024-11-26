@@ -49,7 +49,7 @@ const SponsorsSection = () => {
         {
             name: "AI4DELIBERATION",
             description: "Funded by EU's Horizon Europe, AI4Deliberation integrates AI into citizen deliberation processes to address challenges in modern democracies.",
-            logo: "/ai-logo.jpg",
+            logo: "/ai-logo.png",
             link: ""
         }
     ];
