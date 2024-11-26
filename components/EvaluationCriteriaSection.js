@@ -10,7 +10,7 @@ const EvaluationCriteriaSection = () => {
             icon: Target
         },
         {
-            title: "Αξιοποίηση Ανοιχτών Δεδομένων",
+            title: "Αξιοποίηση Δεδομένων",
             percentage: "20%",
             description: "Σημαντικό παράγοντα αποτελεί και το ποσοστό αξιοποίησης των δεδομένων που θα σας δοθούν, το οποίο βαθμολογείται με 20%.",
             icon: CheckCircle
