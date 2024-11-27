@@ -28,8 +28,8 @@ export default function Home() {
         <Timeline />
         <PrizesSection />
         <SponsorsSection />
-        <RegistrationForm />
         <EvaluationCriteriaSection />
+        <RegistrationForm />
         <FaqSection />
         <Footer />
       </main>

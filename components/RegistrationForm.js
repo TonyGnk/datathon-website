@@ -19,6 +19,7 @@ export const RegistrationForm = () => {
     const [customSubject, setCustomSubject] = useState('');
 
     const [autoTeam, setAutoTeam] = useState(false);
+    const [privacyPolicy, setPrivacyPolicy] = useState(false);
     const [currentMember, setCurrentMember] = useState({
         name: '',
         email: '',
@@ -60,7 +61,7 @@ export const RegistrationForm = () => {
                 ...currentMember,
                 school: currentMember.school === 'other' ? customSchool : currentMember.school,
                 subject: currentMember.subject === 'other' ? customSubject : currentMember.subject,
-                id: Date.now()
+                hasArrived: false,
             }]);
             setCurrentMember({ name: '', email: '', school: '', subject: '' });
             setCustomSchool('');
@@ -88,6 +89,7 @@ export const RegistrationForm = () => {
         const firebaseFormData = {
             teamName: e.target.teamName.value,
             category,
+            privacyPolicy,
             members: teamMembers.map(({ id, ...member }) => member),
             autoTeam: autoTeam
         };
@@ -113,6 +115,7 @@ export const RegistrationForm = () => {
                     {
                         teamName: e.target.teamName.value,
                         category,
+                        privacyPolicy,
                         members: teamMembers.map(({ id, ...member }) => member),
                         autoTeam: teamMembers.length === 1 ? autoTeam : false,
                         teamId: docRef.id
@@ -131,6 +134,7 @@ export const RegistrationForm = () => {
             e.target.reset();
             setTeamMembers([]);
             setCategory('');
+            setPrivacyPolicy(false);
             setCurrentMember({ name: '', email: '', school: '', subject: '' });
             setCustomSchool('');
             setCustomSubject('');
@@ -182,7 +186,7 @@ export const RegistrationForm = () => {
                                 <label className="block text-sm font-medium text-gray-300 mb-2">
                                     Κατηγορία Ομάδας
                                 </label>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 md:grid-cols-2 mb-6 gap-4">
                                     <button
                                         type="button"
                                         onClick={() => setCategory('development')}
@@ -206,6 +210,35 @@ export const RegistrationForm = () => {
                                         Καινοτόμος Ιδέα
                                     </button>
                                 </div>
+                                <label className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-900/50 border border-gray-700 cursor-pointer group">
+                                    <div className="relative">
+                                        <input
+                                            type="checkbox"
+                                            checked={privacyPolicy}
+                                            onChange={(e) => setPrivacyPolicy(e.target.checked)}
+                                            className="sr-only peer"
+                                        />
+                                        <div className="w-6 h-6 border-2 border-gray-500 rounded-md peer-checked:border-yellow-300 peer-checked:bg-blue-900 flex items-center justify-center transition-all duration-200">
+                                            <svg
+                                                className={`w-4 h-4 text-yellow-300 transition-transform duration-200 ${privacyPolicy ? 'scale-100' : 'scale-0'}`}
+                                                fill="none"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth="2"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path d="M5 13l4 4L19 7" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <span className="text-gray-300 group-hover:text-yellow-400 transition-colors duration-200">
+                                        Έχω ενημερωθεί για την <a href="https://datathon-uom.vercel.app/privacy_policy" target="_blank"
+                                            rel="noopener noreferrer" className="text-yellow-400 underline hover:text-yellow-500 transition-colors duration-200">
+                                            επεξεργασία των προσωπικών δεδομένων
+                                        </a>
+                                    </span>
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -362,7 +395,7 @@ export const RegistrationForm = () => {
 
                     <button
                         type="submit"
-                        disabled={status === 'submitting' || !category || teamMembers.length === 0}
+                        disabled={status === 'submitting' || !category || teamMembers.length === 0 || !privacyPolicy}
                         className="w-full flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-blue-900 text-yellow-300 font-medium disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                         <Send className="w-5 h-5" />
