@@ -178,7 +178,7 @@ export const RegistrationForm = () => {
                                     name="teamName"
                                     required
                                     className="w-full px-4 py-3 rounded-lg bg-gray-900/50 border border-gray-700 text-gray-100"
-                                    placeholder="Εισήγαγε το όνομα της ομάδας σας"
+                                    placeholder="Εισήγαγε το όνομα της ομάδας σου"
                                 />
                             </div>
 
@@ -207,7 +207,7 @@ export const RegistrationForm = () => {
                                             }`}
                                     >
                                         <Lightbulb className="w-5 h-5" />
-                                        Καινοτόμος Ιδέα
+                                        Επιχειρηματική Ιδέα
                                     </button>
                                 </div>
                                 <label className="flex items-center gap-3 px-4 py-3 rounded-lg bg-gray-900/50 border border-gray-700 cursor-pointer group">
