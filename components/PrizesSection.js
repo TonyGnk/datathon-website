@@ -1,6 +1,5 @@
 import React from 'react';
 import { Trophy, Cloud, Rocket, ArrowRight } from 'lucide-react';
-import AnimatedNetworkBackground2 from './AnimatedNetworkBackground2';
 
 const PrizesSection = () => {
     return (
@@ -38,7 +37,7 @@ const PrizesSection = () => {
                             </div>
                             <div className="space-y-4">
                                 <div className="flex items-center text-lg">
-                                    <span className="font-bold text-3xl text-yellow-300 mr-2">1000€</span>
+                                    <span className="font-bold text-3xl text-yellow-300 mr-2">1100€</span>
                                     <span className="text-gray-300">για την 1η ομάδα</span>
                                 </div>
                                 <div className="pt-2">
@@ -50,7 +49,7 @@ const PrizesSection = () => {
                                     </span>
                                 </div>
                                 <div className="flex items-center text-lg">
-                                    <span className="font-bold text-2xl text-yellow-300 mr-2">700€</span>
+                                    <span className="font-bold text-2xl text-yellow-300 mr-2">600€</span>
                                     <span className="text-gray-300">για την 2η ομάδα</span>
                                 </div>
                                 <div className="flex items-center text-lg">
