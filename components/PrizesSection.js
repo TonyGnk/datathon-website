@@ -56,7 +56,7 @@ const PrizesSection = () => {
                                     <span className="font-bold text-2xl text-yellow-300 mr-2">300€</span>
                                     <span className="text-gray-300">για την 3η ομάδα</span>
                                 </div>
-                                <p className="text-gray-400">σε υπηρεσίες cloud της LANCOM</p>
+                                <p className="text-gray-400"><u>σε υπηρεσίες cloud της LANCOM</u></p>
                             </div>
                         </div>
                     </div>
@@ -91,7 +91,7 @@ const PrizesSection = () => {
                                     <span className="font-bold text-2xl text-yellow-300 mr-2">300€</span>
                                     <span className="text-gray-300">για την 3η ομάδα</span>
                                 </div>
-                                <p className="text-gray-400">σε υπηρεσίες cloud της LANCOM</p>
+                                <p className="text-gray-400"><u>σε υπηρεσίες cloud της LANCOM</u></p>
                             </div>
                         </div>
                     </div>

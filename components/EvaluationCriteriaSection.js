@@ -73,7 +73,7 @@ const EvaluationCriteriaSection = () => {
 
 
                 {/* Warning Section */}
-                <div className="mt-16 bg-red-800/30 border border-red-700 rounded-lg p-6 text-center">
+                {/* <div className="mt-16 bg-red-800/30 border border-red-700 rounded-lg p-6 text-center">
                     <AlertTriangle className="mx-auto w-12 h-12 text-red-400 mb-4" />
                     <h3 className="text-2xl font-bold text-red-400 mb-2">
                         Προειδοποίηση
@@ -82,7 +82,19 @@ const EvaluationCriteriaSection = () => {
                         Η χρήση κώδικα ή άλλων υλικών που έχουν αναπτυχθεί από το σπίτι είναι αποδεκτή,
                         αλλά πρέπει να δηλωθεί ρητά. Οποιαδήποτε απόκρυψη μπορεί να θεωρηθεί ως απόπειρα εξαπάτησης.
                     </p>
+                </div> */}
+
+                <div className="mt-12 max-w-xl mx-auto bg-yellow-100 border border-yellow-300 rounded-lg p-5 text-center">
+                    <AlertTriangle className="mx-auto w-12 h-12 text-yellow-500 mb-4" />
+                    <h3 className="text-2xl font-bold text-yellow-600 mb-2">
+                        Φιλική Υπενθύμιση
+                    </h3>
+                    <p className="text-gray-700">
+                        Μπορείς να χρησιμοποιήσεις κώδικα που έχεις αναπτύξει στο σπίτι!
+                        Απλά μην ξεχάσεις να το δηλώσεις ξεκάθαρα. Η διαφάνεια βοηθά όλους να παραμείνουμε στη σωστή πορεία.
+                    </p>
                 </div>
+
             </div>
         </section>
     );
