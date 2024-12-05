@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, Clock, ChevronDown } from 'lucide-react';
+import { Calendar, Clock, Info, ChevronDown } from 'lucide-react';
 import AnimatedNetworkBackground from './AnimatedNetworkBackground';
-import TypingAnimation from './TypingAnimation';
+import TypingAnimation from '../TypingAnimation';
 
 const TimeUnit = ({ value, label }) => (
     <div className="flex flex-col items-center justify-center transform transition-transform hover:scale-110 duration-300">
@@ -22,6 +22,13 @@ const HeroSection = () => {
         seconds: 0
     });
 
+    const [timeLeftToReveal, setTimeLeftToReveal] = useState({
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0
+    });
+
     useEffect(() => {
         const calculateTimeLeft = () => {
             const targetDate = new Date('2024-12-08T10:00:00');
@@ -36,8 +43,21 @@ const HeroSection = () => {
             };
         };
 
+        const calculateTimeLeftToReveal = () => {
+            const targetDate = new Date('2024-12-08T10:30:00');
+            const difference = targetDate.getTime() - new Date().getTime();
+
+            return {
+                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+                minutes: Math.floor((difference / 1000 / 60) % 60),
+                seconds: Math.floor((difference / 1000) % 60)
+            };
+        };
+
         const timer = setInterval(() => {
             setTimeLeft(calculateTimeLeft());
+            setTimeLeftToReveal(calculateTimeLeftToReveal());
         }, 1000);
 
         return () => clearInterval(timer);
@@ -53,6 +73,11 @@ const HeroSection = () => {
     const scrollToNextSection = () => {
         document.getElementById('whatIsDatathon')?.scrollIntoView({ behavior: 'smooth' });
     };
+
+    //Μάθετε το θέμα του διαγωνισμού
+    const navigateToCompetitionTheme = () => {
+        window.open('https://docs.google.com/document/d/1vtiv9DCRJXwP1jnYJCgCCiE6Zp3j34evDyqXw4vZm0Y/edit?usp=sharing', '_blank');
+    }
 
     return (
         <div className="relative min-h-screen bg-gray-900 flex items-center">
@@ -89,11 +114,19 @@ const HeroSection = () => {
 
                         <div className="space-x-4 relative">
                             <button
-                                onClick={scrollToNextSection}
+                                onClick={
+                                    timeLeftToReveal.seconds >= 0
+                                        ? scrollToNextSection
+                                        : navigateToCompetitionTheme
+                                }
                                 className="inline-flex items-center justify-center px-8 py-4 bg-blue-900 text-yellow-300 rounded-lg font-medium text-lg shadow-lg transition-all duration-300 hover:bg-blue-800 hover:shadow-xl hover:scale-105 border border-blue-800 hover:border-yellow-300"
                             >
-                                Μάθε περισσότερα
-                                <ChevronDown className="mt-1 ml-2 w-5 h-5 animate-bounce" />
+                                {timeLeftToReveal.seconds >= 0 ? "Μάθε περισσότερα" : "Μάθετε το θέμα του διαγωνισμού"}
+                                {timeLeftToReveal.seconds >= 0 ? (
+                                    <ChevronDown className="mt-1 ml-2 w-5 h-5 animate-bounce" />
+                                ) : (
+                                    <Info className="mt-1 ml-2 w-5 h-5" />
+                                )}
                             </button>
                         </div>
                     </div>

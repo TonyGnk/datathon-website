@@ -3,14 +3,13 @@ import Header from '../components/Header';
 import CategoriesSection from '../components/CategoriesSection';
 import FaqSection from '../components/FaqSection';
 import RegistrationForm from '../components/RegistrationForm';
-import PrizesSection from '../components/PrizesSection';
 import SponsorsSection from '../components/SponsorsSection';
 import Timeline from '../components/Timeline';
-import HeroSection from '@/components/HeroSection';
+import HeroSection from '@/components/HeroSection/HeroSection';
 import AboutSection from '@/components/AboutSection';
 import Footer from '@/components/Footer';
 import EvaluationCriteriaSection from '@/components/EvaluationCriteriaSection';
-
+import PrizesSectionLastTime from '@/components/Prizes/PrizesSectionLastTime';
 
 export default function Home() {
   return (
@@ -26,7 +25,7 @@ export default function Home() {
         <AboutSection />
         <CategoriesSection />
         <Timeline />
-        <PrizesSection />
+        <PrizesSectionLastTime />
         <SponsorsSection />
         <EvaluationCriteriaSection />
         <RegistrationForm />

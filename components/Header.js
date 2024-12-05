@@ -11,7 +11,7 @@ export const Header = () => {
 
     const menuItems = [
         { id: 'whatIsDatathon', text: 'Τι περιλαμβάνει' },
-        { id: 'prizes', text: 'Έπαθλα' },
+        { id: 'prizesLast', text: 'Έπαθλα' },
         { id: 'registration', text: 'Eγγραφή' },
         { id: 'faq', text: 'FAQ' },
     ];
