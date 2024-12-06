@@ -58,8 +58,13 @@ const TimelineItem = ({ time, title, icon: Icon, isLeft }) => {
 
 const Timeline = () => {
     const timelineData = [
-        { time: "10:00 – 10:30", title: "Εγγραφές", icon: UserCheck },
-        { time: "10:30 – 11:00", title: "Σύντομη παρουσίαση", icon: Presentation },
+        { time: "10:00 – 10:30", title: "Προσέλευση & Ταυτοποίηση", icon: UserCheck },
+        { time: "10:35 – 11:40", title: "Χαιρετισμός Καθ. Νίκου Σαμαρά, Αντιπρύτανη Παν. Μακεδονίας", icon: Presentation },
+        { time: "10:45 – 11:50", title: "Χαιρετισμός κ. Νίκου Τζόλλα, Αντιπεριφερειάρχη Ψηφιακής Διακυβέρνησης Π.Κ.Μ.", icon: Presentation },
+        { time: "10:50 – 11:55", title: "Χαιρετισμός κ. Χαράλαμπου Χατζή, Προϊστάμενος Διεύθυνσης Ηλ. Διακυβέρνησης Δήμου Θεσσαλονίκης", icon: Presentation },
+        { time: "10:55 – 11:00", title: "Χαιρετισμός κ. Αλέξανδρου Μελίδη, Γενικού Διευθυντή ΕΕΛΛΑΚ", icon: Presentation },
+
+        // { time: "10:30 – 11:00", title: "Σύντομη παρουσίαση", icon: Presentation },
         { time: "11:00 – 14:00", title: "Εργασία ομάδων", icon: Users },
         { time: "14:00 – 14:45", title: "Break – Light lunch", icon: Coffee },
         { time: "14:45 – 17:00", title: "Εργασία ομάδων", icon: Users },
