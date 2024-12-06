@@ -12,7 +12,7 @@ const Footer = () => {
                     </p>
                     <a
                         href="/privacy_policy"
-                        className="text-gray-400 hover:text-yellow-400 transition mt-2 sm:mt-0 sm:ml-4"
+                        className="text-sm hover:text-yellow-400 transition mt-2 sm:mt-0 sm:ml-4"
                     >
                         Δήλωση Προστασίας Προσωπικών Δεδομένων
                     </a>
