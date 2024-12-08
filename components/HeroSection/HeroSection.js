@@ -79,6 +79,10 @@ const HeroSection = () => {
         window.open('https://docs.google.com/document/d/1vtiv9DCRJXwP1jnYJCgCCiE6Zp3j34evDyqXw4vZm0Y/edit?usp=sharing', '_blank');
     }
 
+    const navigateToRaise = () => {
+        window.open('https://docs.google.com/document/d/1J43dt7NJo8LtuIrfnFuf1vwrFMqMbvURgLzju4aVYpk/edit?usp=sharing', '_blank');
+    }
+
     return (
         <div className="relative min-h-screen bg-gray-900 flex items-center">
             <div className="absolute inset-0 z-0">
@@ -119,7 +123,7 @@ const HeroSection = () => {
                                         ? scrollToNextSection
                                         : navigateToCompetitionTheme
                                 }
-                                className="inline-flex items-center justify-center px-8 py-4 bg-blue-900 text-yellow-300 rounded-lg font-medium text-lg shadow-lg transition-all duration-300 hover:bg-blue-800 hover:shadow-xl hover:scale-105 border border-blue-800 hover:border-yellow-300"
+                                className="inline-flex items-center justify-center px-8 py-4 bg-blue-900 text-yellow-300 rounded-lg font-medium text-lg shadow-lg transition-all duration-300 hover:bg-blue-800 hover:shadow-xl hover:scale-105 border border-blue-800 hover:border-yellow-300 mb-3"
                             >
                                 {timeLeftToReveal.seconds >= 0 ? "Μάθε περισσότερα" : "Μάθετε το θέμα του διαγωνισμού"}
                                 {timeLeftToReveal.seconds >= 0 ? (
@@ -127,6 +131,17 @@ const HeroSection = () => {
                                 ) : (
                                     <Info className="mt-1 ml-2 w-5 h-5" />
                                 )}
+                            </button>
+                        </div>
+                        <div className="space-x-4 relative">
+                            <button
+                                onClick={
+                                    navigateToRaise
+                                }
+                                className="inline-flex items-center justify-center px-8 py-4 bg-blue-900 text-yellow-300 rounded-lg font-medium text-lg shadow-lg transition-all duration-300 hover:bg-blue-800 hover:shadow-xl hover:scale-105 border border-blue-800 hover:border-yellow-300"
+                            >
+                                Σύνδεσμοι RAISE
+                                <Info className="mt-1 ml-2 w-5 h-5" />
                             </button>
                         </div>
                     </div>
