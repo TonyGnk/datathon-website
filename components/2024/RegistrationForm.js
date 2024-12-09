@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { PlusCircle, Users, Trash2, Send, Code, Lightbulb, Clipboard, AlertCircle, Check } from 'lucide-react';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { db } from '../firebase';
 
 
 const SCHOOLS = [

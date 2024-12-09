@@ -1,15 +1,15 @@
 import Head from 'next/head';
-import Header from '../components/Header';
-import CategoriesSection from '../components/CategoriesSection';
-import FaqSection from '../components/FaqSection';
+import Header from '../components/2024/Header';
+import CategoriesSection from '../components/2024/CategoriesSection';
+import FaqSection from '../components/2024/FaqSection';
 import RegistrationForm from '../components/RegistrationForm';
-import SponsorsSection from '../components/SponsorsSection';
-import Timeline from '../components/Timeline';
-import HeroSection from '@/components/HeroSection/HeroSection';
-import AboutSection from '@/components/AboutSection';
-import Footer from '@/components/Footer';
-import EvaluationCriteriaSection from '@/components/EvaluationCriteriaSection';
-import PrizesSectionLastTime from '@/components/Prizes/PrizesSectionLastTime';
+import SponsorsSection from '../components/2024/SponsorsSection';
+import Timeline from '../components/2024/Timeline';
+import HeroSection from '@/components/2024/HeroSection/HeroSection';
+import AboutSection from '@/components/2024/AboutSection';
+import Footer from '@/components/2024/Footer';
+import EvaluationCriteriaSection from '@/components/2024/EvaluationCriteriaSection';
+import PrizesSectionLastTime from '@/components/2024/Prizes/PrizesSectionLastTime';
 
 const Index2024 = () => {
     return (
