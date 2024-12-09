@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react';
 
 const phrases = [
-    'των ανοικτών δεδομένων',
-    'του ιστού',
-    'της τεχνολογίας',
-    'των ανοικτών δεδομένων',
-    'του μέλλοντος',
-    'των API',
-    'της καινοτομίας',
+    // 'των ανοικτών δεδομένων',
+    // 'του ιστού',
+    // 'της τεχνολογίας',
+    // 'των ανοικτών δεδομένων',
+    // 'του μέλλοντος',
+    // 'των API',
+    // 'της καινοτομίας',
+    '',
+    ''
 ];
 
 const TypingAnimation = () => {
@@ -53,15 +55,25 @@ const TypingAnimation = () => {
     }, [text, isDeleting, isPaused, phraseIndex]);
 
     return (
-        <h2 className="font-mono text-4xl md:text-5xl font-bold text-gray-100 mb-6 text-center flex flex-wrap justify-center gap-x-2">
-            <span>Ανακάλυψε{' '}</span>
-            <span>τη{' '}</span>
-            <span>δύναμη{' '}</span>
-            {text.trim().split(' ').map((word, index) => (
-                <span key={index} className="text-yellow-300">{word}{' '}</span>
-            ))}
-            {/* Add a negative margin to the left */}
-            <span className="animate-pulse text-yellow-200 -ml-5">|</span>
+        // <h2 className="font-mono text-4xl md:text-5xl font-bold text-gray-100 mb-6 text-center flex flex-wrap justify-center gap-x-2">
+        //     <span>Ανακάλυψε{' '}</span>
+        //     <span>τη{' '}</span>
+        //     <span>δύναμη{' '}</span>
+        //     {text.trim().split(' ').map((word, index) => (
+        //         <span key={index} className="text-yellow-300">{word}{' '}</span>
+        //     ))}
+        //     {/* Add a negative margin to the left */}
+        //     <span className="animate-pulse text-yellow-200 -ml-5">|</span>
+        // </h2>
+        <h2 className="font-mono text-3xl md:text-4xl font-bold text-gray-100 mb-6 text-center flex flex-wrap justify-center gap-x-3">
+            <span>Ευχαριστούμε{' '}</span>
+            <span>για{' '}</span>
+            <span>την{' '}</span>
+            <span>συμμετοχή{' '}</span>
+            <span>σας{' '}</span>
+            <span> {' '}</span>
+            <span className="text-yellow-200 -ml-5"> !!</span>
+
         </h2>
     );
 };

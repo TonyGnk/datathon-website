@@ -64,14 +64,12 @@ const Timeline = () => {
         { time: "10:45 – 11:50", title: "Χαιρετισμός κ. Νίκου Τζόλλα, Αντιπεριφερειάρχη Ψηφιακής Διακυβέρνησης Π.Κ.Μ.", icon: Presentation },
         { time: "10:50 – 11:55", title: "Χαιρετισμός κ. Χαράλαμπου Χατζή, Προϊστάμενος Διεύθυνσης Ηλ. Διακυβέρνησης Δήμου Θεσσαλονίκης", icon: Presentation },
         { time: "10:55 – 11:00", title: "Χαιρετισμός κ. Αλέξανδρου Μελίδη, Γενικού Διευθυντή ΕΕΛΛΑΚ", icon: Presentation },
-
-        // { time: "10:30 – 11:00", title: "Σύντομη παρουσίαση", icon: Presentation },
         { time: "11:00 – 14:00", title: "Εργασία ομάδων", icon: Users },
         { time: "14:00 – 14:45", title: "Lunch", icon: Utensils },
         { time: "14:45 – 17:00", title: "Εργασία ομάδων", icon: Users },
         { time: "17:00 – 18:00", title: "Παρουσίαση αποτελεσμάτων ομάδων", icon: Presentation },
         { time: "18:00 – 18:40", title: "Αξιολόγηση από επιτροπή", icon: Award },
-        { time: "18:40 – 19:00", title: "Απονομή βραβείων", icon: Trophy }
+        { time: "18:40 – 19:15", title: "Απονομή βραβείων", icon: Trophy }
     ];
 
     return (

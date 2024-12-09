@@ -45,29 +45,29 @@ export const RegistrationForm = () => {
     };
 
     const handleAddMember = () => {
-        const emailValidationError = validateEmail(currentMember.email);
-        if (emailValidationError) {
-            setEmailError(emailValidationError);
-            return;
-        }
+        // const emailValidationError = validateEmail(currentMember.email);
+        // if (emailValidationError) {
+        //     setEmailError(emailValidationError);
+        //     return;
+        // }
 
-        if (teamMembers.some(member => member.email === currentMember.email)) {
-            setEmailError('Αυτό το email χρησιμοποιείται ήδη');
-            return;
-        }
+        // if (teamMembers.some(member => member.email === currentMember.email)) {
+        //     setEmailError('Αυτό το email χρησιμοποιείται ήδη');
+        //     return;
+        // }
 
-        if (currentMember.name && currentMember.email && (currentMember.school || customSchool) && (currentMember.subject || customSubject)) {
-            setTeamMembers([...teamMembers, {
-                ...currentMember,
-                school: currentMember.school === 'other' ? customSchool : currentMember.school,
-                subject: currentMember.subject === 'other' ? customSubject : currentMember.subject,
-                hasArrived: false,
-            }]);
-            setCurrentMember({ name: '', email: '', school: '', subject: '' });
-            setCustomSchool('');
-            setCustomSubject('');
-            setEmailError('');
-        }
+        // if (currentMember.name && currentMember.email && (currentMember.school || customSchool) && (currentMember.subject || customSubject)) {
+        //     setTeamMembers([...teamMembers, {
+        //         ...currentMember,
+        //         school: currentMember.school === 'other' ? customSchool : currentMember.school,
+        //         subject: currentMember.subject === 'other' ? customSubject : currentMember.subject,
+        //         hasArrived: false,
+        //     }]);
+        //     setCurrentMember({ name: '', email: '', school: '', subject: '' });
+        //     setCustomSchool('');
+        //     setCustomSubject('');
+        //     setEmailError('');
+        // }
     };
 
     const handleRemoveMember = (id) => {
@@ -86,68 +86,68 @@ export const RegistrationForm = () => {
         }
 
 
-        const firebaseFormData = {
-            teamName: e.target.teamName.value,
-            category,
-            privacyPolicy,
-            members: teamMembers.map(({ id, ...member }) => member),
-            autoTeam: autoTeam
-        };
+        // const firebaseFormData = {
+        //     teamName: e.target.teamName.value,
+        //     category,
+        //     privacyPolicy,
+        //     members: teamMembers.map(({ id, ...member }) => member),
+        //     autoTeam: autoTeam
+        // };
 
-        try {
-            if (!db) {
-                throw new Error('Firebase is not initialized');
-            }
-            const registrationsRef = collection(db, 'participants');
-            const docRef = await addDoc(registrationsRef, {
-                ...firebaseFormData,
-                createdAt: serverTimestamp(),
-            });
+        // try {
+        //     if (!db) {
+        //         throw new Error('Firebase is not initialized');
+        //     }
+        //     const registrationsRef = collection(db, 'participants');
+        //     const docRef = await addDoc(registrationsRef, {
+        //         ...firebaseFormData,
+        //         createdAt: serverTimestamp(),
+        //     });
 
-            console.log('New document created with ID:', docRef.id);
+        //     console.log('New document created with ID:', docRef.id);
 
-            const response = await fetch('/api/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(
-                    {
-                        teamName: e.target.teamName.value,
-                        category,
-                        privacyPolicy,
-                        members: teamMembers.map(({ id, ...member }) => member),
-                        autoTeam: teamMembers.length === 1 ? autoTeam : false,
-                        teamId: docRef.id
-                    }
-                )
-            });
+        //     const response = await fetch('/api/send-email', {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json',
+        //         },
+        //         body: JSON.stringify(
+        //             {
+        //                 teamName: e.target.teamName.value,
+        //                 category,
+        //                 privacyPolicy,
+        //                 members: teamMembers.map(({ id, ...member }) => member),
+        //                 autoTeam: teamMembers.length === 1 ? autoTeam : false,
+        //                 teamId: docRef.id
+        //             }
+        //         )
+        //     });
 
-            const data = await response.json();
+        //     const data = await response.json();
 
-            if (!response.ok) {
-                throw new Error(data.details || data.error || 'Σφάλμα κατά την αποστολή των emails');
-            }
+        //     if (!response.ok) {
+        //         throw new Error(data.details || data.error || 'Σφάλμα κατά την αποστολή των emails');
+        //     }
 
-            // Success case
-            setStatus('success');
-            e.target.reset();
-            setTeamMembers([]);
-            setCategory('');
-            setPrivacyPolicy(false);
-            setCurrentMember({ name: '', email: '', school: '', subject: '' });
-            setCustomSchool('');
-            setCustomSubject('');
-            setAutoTeam(false);
+        //     // Success case
+        //     setStatus('success');
+        //     e.target.reset();
+        //     setTeamMembers([]);
+        //     setCategory('');
+        //     setPrivacyPolicy(false);
+        //     setCurrentMember({ name: '', email: '', school: '', subject: '' });
+        //     setCustomSchool('');
+        //     setCustomSubject('');
+        //     setAutoTeam(false);
 
-        } catch (error) {
-            console.error('Error during submission:', error);
-            setStatus('error');
-            setSubmissionError(
-                'Παρουσιάστηκε σφάλμα κατά την υποβολή: ' +
-                (error.message || 'Παρακαλώ προσπαθήστε ξανά αργότερα.')
-            );
-        }
+        // } catch (error) {
+        //     console.error('Error during submission:', error);
+        //     setStatus('error');
+        //     setSubmissionError(
+        //         'Παρουσιάστηκε σφάλμα κατά την υποβολή: ' +
+        //         (error.message || 'Παρακαλώ προσπαθήστε ξανά αργότερα.')
+        //     );
+        // }
     };
 
     return (

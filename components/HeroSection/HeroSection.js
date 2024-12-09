@@ -74,7 +74,6 @@ const HeroSection = () => {
         document.getElementById('whatIsDatathon')?.scrollIntoView({ behavior: 'smooth' });
     };
 
-    //Μάθετε το θέμα του διαγωνισμού
     const navigateToCompetitionTheme = () => {
         window.open('https://docs.google.com/document/d/1vtiv9DCRJXwP1jnYJCgCCiE6Zp3j34evDyqXw4vZm0Y/edit?usp=sharing', '_blank');
     }
@@ -104,10 +103,15 @@ const HeroSection = () => {
                         </p>
 
                         <div className="flex flex-col items-center justify-center bg-gray-900/50 backdrop-blur-sm rounded-2xl p-7 mb-9 shadow-lg border border-gray-700 hover:border-yellow-400 transition-all duration-300">
-                            <h2 className="text-gray-300 font-medium mb-6 flex items-center justify-center">
+                            {/* <h2 className="text-gray-300 font-medium mb-6 flex items-center justify-center">
                                 <Clock className="w-5 h-5 mr-2 text-yellow-300" />
                                 Η αντίστροφη μέτρηση ξεκίνησε!
+                            </h2> */}
+                            <h2 className="text-gray-300 font-medium mb-6 flex items-center justify-center">
+                                <Clock className="w-5 h-5 mr-2 text-yellow-300" />
+                                Οι υποβολές έληξαν
                             </h2>
+
                             <div className="flex justify-center items-center gap-4">
                                 <TimeUnit value={timeLeft.days} label="Ημέρες" />
                                 <TimeUnit value={timeLeft.hours} label="Ώρες" />
@@ -117,7 +121,7 @@ const HeroSection = () => {
                         </div>
 
                         <div className="space-x-4 relative">
-                            <button
+                            {/* <button
                                 onClick={
                                     timeLeftToReveal.seconds >= 0
                                         ? scrollToNextSection
@@ -131,17 +135,15 @@ const HeroSection = () => {
                                 ) : (
                                     <Info className="mt-1 ml-2 w-5 h-5" />
                                 )}
-                            </button>
-                        </div>
-                        <div className="space-x-4 relative">
+                            </button> */}
                             <button
                                 onClick={
-                                    navigateToRaise
+                                    scrollToNextSection
                                 }
-                                className="inline-flex items-center justify-center px-8 py-4 bg-blue-900 text-yellow-300 rounded-lg font-medium text-lg shadow-lg transition-all duration-300 hover:bg-blue-800 hover:shadow-xl hover:scale-105 border border-blue-800 hover:border-yellow-300"
+                                className="inline-flex items-center justify-center px-8 py-4 bg-blue-900 text-yellow-300 rounded-lg font-medium text-lg shadow-lg transition-all duration-300 hover:bg-blue-800 hover:shadow-xl hover:scale-105 border border-blue-800 hover:border-yellow-300 mb-3"
                             >
-                                Σύνδεσμοι RAISE
-                                <Info className="mt-1 ml-2 w-5 h-5" />
+                                Μάθετε τους Νικητές!
+                                <ChevronDown className="mt-1 ml-2 w-5 h-5 animate-bounce" />
                             </button>
                         </div>
                     </div>
