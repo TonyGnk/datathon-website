@@ -73,7 +73,6 @@ const TypingAnimation = () => {
             <span>σας{' '}</span>
             <span> {' '}</span>
             <span className="text-yellow-200 -ml-5"> !!</span>
-
         </h2>
     );
 };
