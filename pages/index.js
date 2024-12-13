@@ -2,7 +2,6 @@ import Head from 'next/head';
 import Header from '../components/2024/Header';
 import CategoriesSection from '../components/2024/CategoriesSection';
 import FaqSection from '../components/2024/FaqSection';
-import RegistrationForm from '../components/2024/RegistrationForm';
 import SponsorsSection from '../components/2024/SponsorsSection';
 import Timeline from '../components/2024/Timeline';
 import HeroSection from '@/components/2024/HeroSection/HeroSection';
@@ -11,6 +10,7 @@ import Footer from '@/components/2024/Footer';
 import EvaluationCriteriaSection from '@/components/2024/EvaluationCriteriaSection';
 import PrizesSectionLastTime from '@/components/2024/Prizes/PrizesSectionLastTime';
 import WinnersSection from '@/components/2024/WinnersSection';
+import Form from '@/components/2024/Form';
 
 export default function Home() {
   return (
@@ -30,7 +30,7 @@ export default function Home() {
         <PrizesSectionLastTime />
         <SponsorsSection />
         <EvaluationCriteriaSection />
-        <RegistrationForm />
+        <Form />
         <FaqSection />
         <Footer />
       </main>
