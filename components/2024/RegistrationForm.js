@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PlusCircle, Users, Trash2, Send, Code, Lightbulb, Clipboard, AlertCircle, Check } from 'lucide-react';
+import { PlusCircle, Users, Trash2, Send, Code, Lightbulb, Clipboard, AlertCircle } from 'lucide-react';
 
 
 const SCHOOLS = [
