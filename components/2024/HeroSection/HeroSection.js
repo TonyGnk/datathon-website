@@ -70,9 +70,14 @@ const HeroSection = () => {
         });
     };
 
-    const scrollToNextSection = () => {
+    const scrollToAbout = () => {
         document.getElementById('whatIsDatathon')?.scrollIntoView({ behavior: 'smooth' });
     };
+
+    const scrollToWinners = () => {
+        document.getElementById('winners')?.scrollIntoView({ behavior: 'smooth' });
+    };
+
 
     const navigateToCompetitionTheme = () => {
         window.open('https://docs.google.com/document/d/1vtiv9DCRJXwP1jnYJCgCCiE6Zp3j34evDyqXw4vZm0Y/edit?usp=sharing', '_blank');
@@ -124,7 +129,7 @@ const HeroSection = () => {
                             {/* <button
                                 onClick={
                                     timeLeftToReveal.seconds >= 0
-                                        ? scrollToNextSection
+                                        ? scrollToAbout
                                         : navigateToCompetitionTheme
                                 }
                                 className="inline-flex items-center justify-center px-8 py-4 bg-blue-900 text-yellow-300 rounded-lg font-medium text-lg shadow-lg transition-all duration-300 hover:bg-blue-800 hover:shadow-xl hover:scale-105 border border-blue-800 hover:border-yellow-300 mb-3"
@@ -138,7 +143,7 @@ const HeroSection = () => {
                             </button> */}
                             <button
                                 onClick={
-                                    scrollToNextSection
+                                    scrollToWinners
                                 }
                                 className="inline-flex items-center justify-center px-8 py-4 bg-blue-900 text-yellow-300 rounded-lg font-medium text-lg shadow-lg transition-all duration-300 hover:bg-blue-800 hover:shadow-xl hover:scale-105 border border-blue-800 hover:border-yellow-300 mb-3"
                             >

@@ -80,7 +80,7 @@ export const Header = () => {
                             onClick={handleLogoClick}
                         >
                             <img
-                                src="/logo2.png"
+                                src="/2024/logo2.png"
                                 alt="Logo"
                                 className="h-12 w-auto"
                             />

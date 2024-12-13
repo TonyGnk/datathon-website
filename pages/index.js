@@ -10,6 +10,7 @@ import AboutSection from '@/components/2024/AboutSection';
 import Footer from '@/components/2024/Footer';
 import EvaluationCriteriaSection from '@/components/2024/EvaluationCriteriaSection';
 import PrizesSectionLastTime from '@/components/2024/Prizes/PrizesSectionLastTime';
+import WinnersSection from '@/components/2024/WinnersSection';
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <main>
         <Header />
         <HeroSection />
+        <WinnersSection />
         <AboutSection />
         <CategoriesSection />
         <Timeline />

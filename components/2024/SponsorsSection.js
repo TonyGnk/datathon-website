@@ -31,25 +31,25 @@ const SponsorsSection = () => {
         {
             name: "RAISE",
             description: "Μια πρωτοβουλία που στοχεύει στη δημιουργία ενός αξιόπιστου και διαφανούς περιβάλλοντος για τη διαμοίραση και επεξεργασία δεδομένων μεταξύ ερευνητικών κοινοτήτων.",
-            logo: "/raise_transparent.png",
+            logo: "/2024/raise_transparent.png",
             link: "https://raise-science.eu/the-project/"
         },
         {
             name: "ΕΕΛΛΑΚ",
             description: "Ο Οργανισμός Ανοικτών Τεχνολογιών (ΕΕΛ/ΛΑΚ) είναι μία αστική μη κερδοσκοπική εταιρεία με 37 Πανεπιστήμια και Ερευνητικά Κέντρα ως μετόχους.",
-            logo: "/eellak-logo.png",
+            logo: "/2024/eellak-logo.png",
             link: "https://ellak.gr/"
         },
         {
             name: "digiGOV-innoHUB",
             description: "O GR digiGOV-innoHUB προσφέρει λύσεις για την αναβάθμιση των δημόσιων υπηρεσιών, αξιοποιώντας τις δυνατότητες των νέων τεχνολογιών.",
-            logo: "/digiGov-logo.png",
+            logo: "/2024/digiGov-logo.png",
             link: "https://digigov.innohub.gr/"
         },
         {
             name: "AI4DELIBERATION",
             description: "Funded by EU's Horizon Europe, AI4Deliberation integrates AI into citizen deliberation processes to address challenges in modern democracies.",
-            logo: "/ai-logo.png",
+            logo: "/2024/ai-logo.png",
             link: ""
         }
     ];
@@ -58,7 +58,7 @@ const SponsorsSection = () => {
         {
             name: "Lancom",
             description: "Αμιγώς ελληνική εταιρεία στο πεδίο των IT υπηρεσιών data center, με τρία Enterprise cloud data centers σε Αθήνα και Θεσσαλονίκη.",
-            logo: "/lancom-logo.jpg",
+            logo: "/2024/lancom-logo.jpg",
             link: "https://www.lancom.gr/"
         },
     ]
@@ -68,25 +68,25 @@ const SponsorsSection = () => {
         {
             name: "OK!Thess",
             description: "Το κορυφαίο startup hub της Θεσσαλονίκης και καταλύτης για την ανάπτυξη του τοπικού οικοσυστήματος καινοτομίας.",
-            logo: "/okthess-logo.jpg",
+            logo: "/2024/okthess-logo.jpg",
             link: "https://okthess.gr/"
         },
         {
             name: "Seven Loft",
             description: "Εξειδικευμένη εταιρεία στην κατασκευή & προώθηση ιστοσελίδων με Google Ads, SEO & Social.",
-            logo: "/sevenloft-logo.jpg",
+            logo: "/2024/sevenloft-logo.jpg",
             link: "https://www.sevenloft.gr/"
         },
         {
             name: "Χούτος Catering",
             description: "Catering υψηλής ποιότητας με έξι πολυχώρους στη Θεσσαλονίκη.",
-            logo: "/houtos-logo2.png",
+            logo: "/2024/houtos-logo2.png",
             link: "https://cateringhoutos.gr/"
         },
         {
             name: "Φοιτητικό Φωτοτυπικό Εργαστήριο",
             description: "Υπηρεσίες εκτυπώσεων και εντύπων υψηλής ποιότητας.",
-            logo: "/foititiko-logo.jpg",
+            logo: "/2024/foititiko-logo.jpg",
             link: "https://fititiko.gr/"
         }
     ];
